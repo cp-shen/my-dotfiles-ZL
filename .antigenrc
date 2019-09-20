@@ -1,0 +1,26 @@
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+  colorize
+  colored-man-pages
+  command-not-found
+  git
+  github
+  gitignore
+  git-extras
+  #vi-mode
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  zsh-users/zsh-syntax-highlighting
+  mafredri/zsh-async
+#  sindresorhus/pure
+EOBUNDLES
+
+# Load the theme.
+# antigen theme robbyrussell
+antigen theme denysdovhan/spaceship-prompt
+
+# Tell Antigen that you're done.
+antigen apply
+
