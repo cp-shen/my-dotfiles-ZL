@@ -292,14 +292,14 @@ globalkeys = my_table.join(
         end,
         {description = "focus right", group = "focus control"}),
 
-    awful.key({ modkey }, "p",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "focus previous", group = "focus control"}),
+    --awful.key({ modkey }, "p",
+        --function ()
+            --awful.client.focus.history.previous()
+            --if client.focus then
+                --client.focus:raise()
+            --end
+        --end,
+        --{description = "focus previous", group = "focus control"}),
 
     awful.key({ modkey, }, "a",
         function ()
@@ -314,19 +314,19 @@ globalkeys = my_table.join(
         {description = "launch rofi: window list", group = "launcher"}),
 
     -- Default client focus
-    --awful.key({ altkey,           }, "j",
-        --function ()
-            --awful.client.focus.byidx( 1)
-        --end,
-        --{description = "focus next by index", group = "focus control"}
-    --),
+    awful.key({ modkey, "Control"}, "l",
+        function ()
+            awful.client.focus.byidx( 1)
+        end,
+        {description = "focus next by index", group = "focus control"}
+    ),
 
-    --awful.key({ altkey,           }, "k",
-        --function ()
-            --awful.client.focus.byidx(-1)
-        --end,
-        --{description = "focus previous by index", group = "focus control"}
-    --),
+    awful.key({ modkey, "Control"}, "h",
+        function ()
+            awful.client.focus.byidx(-1)
+        end,
+        {description = "focus previous by index", group = "focus control"}
+    ),
 
     -- reload and quit
     awful.key({ modkey, "Control", "Shift" }, "r", awesome.restart,
@@ -334,7 +334,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Control", "Shift" }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome hotkeys"}),
     -- help
-    awful.key({ modkey, "Control"}, "h", hotkeys_popup.show_help,
+    awful.key({ modkey, "Control", "Shift" }, "h", hotkeys_popup.show_help,
               {description = "show help", group="awesome hotkeys"}),
     -- show menu
     awful.key({ modkey, "Control"}, "w", function () awful.util.mymainmenu:show() end,
@@ -496,16 +496,16 @@ globalkeys = my_table.join(
 
 
 
-    -- Restore minimized client
-    --awful.key({ modkey, "Control" }, "n",
-              --function () local c = awful.client.restore()
-                  ---- Focus restored client
-                  --if c then
-                      --client.focus = c
-                      --c:raise()
-                  --end
-              --end,
-              --{description = "restore minimized", group = "client"}),
+     --Restore minimized client
+    awful.key({ modkey, "Control" }, "n",
+              function () local c = awful.client.restore()
+                  -- Focus restored client
+                  if c then
+                      client.focus = c
+                      c:raise()
+                  end
+              end,
+              {description = "restore minimized", group = "client"}),
 
     -- Dropdown application
     awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
@@ -655,13 +655,13 @@ clientkeys = my_table.join(
               {description = "move to screen", group = "client"}),
     --awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop end,
               --{description = "toggle keep on top", group = "client"}),
-    --awful.key({ modkey,           }, "n",
-        --function (c)
-            ---- The client currently has the input focus, so it cannot be
-            ---- minimized, since minimized clients can't have the focus.
-            --c.minimized = true
-        --end ,
-        --{description = "minimize", group = "client"}),
+    awful.key({ modkey, }, "n",
+        function (c)
+            -- The client currently has the input focus, so it cannot be
+            -- minimized, since minimized clients can't have the focus.
+            c.minimized = true
+        end ,
+        {description = "minimize", group = "client"}),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized = not c.maximized
@@ -917,7 +917,7 @@ client.connect_signal("focus", function(c)
 end)
 
 client.connect_signal("unfocus", function(c)
-                         --c.opacity = 0.8
+                         c.opacity = 0.85
                          c.border_color = beautiful.border_normal
 end)
 
