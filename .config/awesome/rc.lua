@@ -914,9 +914,9 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("property::minimized",
     function(c)
         if c.minimized then --minimzing
-            c.name = c.name .. "-[minimized]"
+            c.name = "[minimized] " .. c.name
         else --restoring
-            c.name = string.gsub(c.name, "-%[minimized%]", "")
+            c.name = string.gsub(c.name, "%s*%[minimized%]%s*", "")
         end
     end)
 
