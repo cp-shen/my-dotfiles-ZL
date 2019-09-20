@@ -309,7 +309,7 @@ globalkeys = my_table.join(
 
     awful.key({ modkey, }, "Tab",
         function ()
-            awful.spawn("/usr/bin/rofi -show window -modi window")
+            awful.spawn("/usr/bin/rofi -show windowcd -modi windowcd")
         end,
         {description = "launch rofi: window list", group = "launcher"}),
 
