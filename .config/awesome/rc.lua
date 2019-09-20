@@ -911,6 +911,15 @@ end
 
 client.connect_signal("property::maximized", border_adjust)
 
+client.connect_signal("property::minimized",
+    function(c)
+        if c.minimized then --minimzing
+            c.name = c.name .. "-[minimized]"
+        else --restoring
+            c.name = string.gsub(c.name, "-%[minimized%]", "")
+        end
+    end)
+
 client.connect_signal("focus", function(c)
                          c.opacity = 1
                          border_adjust(c)
