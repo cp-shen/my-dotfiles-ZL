@@ -271,7 +271,7 @@ nmap <Leader>nh :noh<CR>
 nmap <C-s> :w<CR>
 
 "close
-nmap <C-q> :q<CR>
+nmap <C-q> :bd<CR>
 
 "terminal mode keybindings
 tnoremap <C-\> <C-\><C-n>
@@ -339,4 +339,7 @@ set belloff=all
 
 "do not insert comment leader
 autocmd FileType * setlocal formatoptions-=ro
+
+"keyword dictionaries for completion
+au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
 
