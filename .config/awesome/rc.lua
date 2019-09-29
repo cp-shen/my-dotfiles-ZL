@@ -62,7 +62,7 @@ awful.spawn('xrdb ~/.Xresources')
 --awful.spawn.with_shell('~/ss.sh')
 
 --configure monitors
-awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
+--awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
 
 --pull then push dotfiles
 --awful.spawn('yadm pull')
