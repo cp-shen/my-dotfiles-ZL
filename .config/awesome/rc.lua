@@ -62,7 +62,7 @@ awful.spawn('xrdb ~/.Xresources')
 --awful.spawn.with_shell('~/ss.sh')
 
 --configure monitors
---awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
+awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
 
 --pull then push dotfiles
 --awful.spawn('yadm pull')
@@ -358,10 +358,10 @@ globalkeys = my_table.join(
     --awful.key({ modkey,           }, "Tab", awful.tag.history.restore,
               --{description = "go back", group = "tag"}),
     -- Non-empty tag browsing
-    --awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
-              --{description = "view  previous nonempty", group = "tag"}),
-    --awful.key({ altkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
-              --{description = "view  previous nonempty", group = "tag"}),
+    awful.key({ modkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
+              {description = "view  previous nonempty", group = "tag"}),
+    awful.key({ modkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
+              {description = "view  previous nonempty", group = "tag"}),
 
     -- Dynamic tagging
     awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end,
