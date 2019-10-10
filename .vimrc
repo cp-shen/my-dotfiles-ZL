@@ -343,3 +343,6 @@ autocmd FileType * setlocal formatoptions-=ro
 "keyword dictionaries for completion
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
 
+"set underscore to be a word seperator
+set iskeyword-=_
+
