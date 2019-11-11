@@ -105,6 +105,7 @@ if has('nvim')
         set hidden
         "register lsp servers
         let g:LanguageClient_serverCommands = {
+            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
             \ 'cpp': ['clangd'],
             \ 'c': ['clangd'],
             \ }
@@ -294,6 +295,9 @@ tnoremap <A-\> <C-\><C-n>
 nmap <Leader>D <Plug>cpp_doxygenInsert
 
 nmap <Leader>R :RangerCurrentFile<CR>
+
+nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+
 "---------------------------------------------
 "autocmd actions
 "---------------------------------------------
