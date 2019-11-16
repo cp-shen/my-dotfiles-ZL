@@ -88,7 +88,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-plug'
 
 "fzf for file finding
-"Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "plugins for nvim only
