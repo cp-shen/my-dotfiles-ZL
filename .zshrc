@@ -1,6 +1,7 @@
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+source /usr/share/zsh/share/antigen.zsh
 source ~/Programs/antigen/antigen.zsh
 antigen init ~/.antigenrc
 
