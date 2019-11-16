@@ -62,7 +62,7 @@ awful.spawn('xrdb ~/.Xresources')
 --awful.spawn.with_shell('~/ss.sh')
 
 --configure monitors
---awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
+awful.spawn.with_shell('~/.screenlayout/auto_screen.sh')
 
 --pull then push dotfiles
 --awful.spawn('yadm pull')
@@ -427,7 +427,7 @@ globalkeys = my_table.join(
     -- system hotkeys
     -- lock screen
     awful.key({ modkey, "Control", "Shift" }, "l", function ()
-        os.execute("slock")
+        os.execute("gnome-screensaver-command -l")
     end,
     {description = "lock screen", group = "sys hotkeys"}),
     -- suspend
@@ -926,7 +926,7 @@ client.connect_signal("focus", function(c)
 end)
 
 client.connect_signal("unfocus", function(c)
-                         --c.opacity = 0.85
+                         c.opacity = 0.85
                          c.border_color = beautiful.border_normal
 end)
 

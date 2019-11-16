@@ -1,7 +1,4 @@
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-source ~/Programs/antigen/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 antigen init ~/.antigenrc
 
 bindkey '^[[Z' reverse-menu-complete

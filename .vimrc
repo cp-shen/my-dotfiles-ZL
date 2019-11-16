@@ -2,8 +2,10 @@
 "install plugins using vim-plug
 "---------------------------------------------
 "Specify a directory for plugins
-"- For Neovim: ~/.local/share/nvim/plugged - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"- For Neovim: ~/.local/share/nvim/plugged
+"- Avoid using standard Vim directory names like 'plugin'
+" plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundle')
 
 "tools
 Plug 'vim-scripts/DoxygenToolKit.vim'
@@ -86,7 +88,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-plug'
 
 "fzf for file finding
-"Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "plugins for nvim only
@@ -105,9 +107,10 @@ if has('nvim')
         set hidden
         "register lsp servers
         let g:LanguageClient_serverCommands = {
-            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-            \ 'cpp': ['clangd'],
-            \ 'c': ['clangd'],
+            \ 'python': ['~/.local/bin/pyls'],
+            \ 'lua': ['lua-lsp'],
+            \ 'cpp': ['clangd-7'],
+            \ 'c': ['clangd-7'],
             \ }
         let g:LanguageClient_autoStart = 1
 endif
@@ -295,9 +298,6 @@ tnoremap <A-\> <C-\><C-n>
 nmap <Leader>D <Plug>cpp_doxygenInsert
 
 nmap <Leader>R :RangerCurrentFile<CR>
-
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-
 "---------------------------------------------
 "autocmd actions
 "---------------------------------------------
@@ -346,7 +346,4 @@ autocmd FileType * setlocal formatoptions-=ro
 
 "keyword dictionaries for completion
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
-
-"set underscore to be a word seperator
-set iskeyword-=_
 
