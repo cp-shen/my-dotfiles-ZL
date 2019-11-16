@@ -88,7 +88,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-plug'
 
 "fzf for file finding
-Plug 'junegunn/fzf', { 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "plugins for nvim only
@@ -107,10 +107,11 @@ if has('nvim')
         set hidden
         "register lsp servers
         let g:LanguageClient_serverCommands = {
+            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
             \ 'python': ['~/.local/bin/pyls'],
             \ 'lua': ['lua-lsp'],
-            \ 'cpp': ['clangd-7'],
-            \ 'c': ['clangd-7'],
+            \ 'cpp': ['clangd'],
+            \ 'c': ['clangd'],
             \ }
         let g:LanguageClient_autoStart = 1
 endif
@@ -298,6 +299,8 @@ tnoremap <A-\> <C-\><C-n>
 nmap <Leader>D <Plug>cpp_doxygenInsert
 
 nmap <Leader>R :RangerCurrentFile<CR>
+
+nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 "---------------------------------------------
 "autocmd actions
 "---------------------------------------------
@@ -347,3 +350,5 @@ autocmd FileType * setlocal formatoptions-=ro
 "keyword dictionaries for completion
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
 
+"set underscore to be a word seperator
+set iskeyword-=_

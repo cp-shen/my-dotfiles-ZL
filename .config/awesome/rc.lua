@@ -358,10 +358,10 @@ globalkeys = my_table.join(
     --awful.key({ modkey,           }, "Tab", awful.tag.history.restore,
               --{description = "go back", group = "tag"}),
     -- Non-empty tag browsing
-    --awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
-              --{description = "view  previous nonempty", group = "tag"}),
-    --awful.key({ altkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
-              --{description = "view  previous nonempty", group = "tag"}),
+    awful.key({ modkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
+              {description = "view previous nonempty", group = "tag"}),
+    awful.key({ modkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
+              {description = "view previous nonempty", group = "tag"}),
 
     -- Dynamic tagging
     awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end,
@@ -427,7 +427,8 @@ globalkeys = my_table.join(
     -- system hotkeys
     -- lock screen
     awful.key({ modkey, "Control", "Shift" }, "l", function ()
-        os.execute("gnome-screensaver-command -l")
+        --os.execute("gnome-screensaver-command -l")
+        os.execute("slock")
     end,
     {description = "lock screen", group = "sys hotkeys"}),
     -- suspend
@@ -926,7 +927,7 @@ client.connect_signal("focus", function(c)
 end)
 
 client.connect_signal("unfocus", function(c)
-                         c.opacity = 0.85
+                         --c.opacity = 0.85
                          c.border_color = beautiful.border_normal
 end)
 
