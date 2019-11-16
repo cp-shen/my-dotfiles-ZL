@@ -9,4 +9,4 @@ set noerrorbells
 set surround
 set multiple-cursors
 
-nnoremap <C-n> i<CR><Esc>
+nnoremap <C-A-n> i<CR><Esc>

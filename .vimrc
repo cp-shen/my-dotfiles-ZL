@@ -13,6 +13,18 @@ Plug 'vim-scripts/cpp_doxygen'
 Plug 'scrooloose/nerdtree' "file tree
 Plug 'scrooloose/nerdcommenter' "comment tool
 Plug 'terryma/vim-multiple-cursors'
+    let g:multi_cursor_use_default_mapping=0
+
+    " Default mapping
+    let g:multi_cursor_start_word_key      = '<C-n>'
+    let g:multi_cursor_select_all_word_key = '<A-n>'
+    let g:multi_cursor_start_key           = 'g<C-n>'
+    let g:multi_cursor_select_all_key      = 'g<A-n>'
+    let g:multi_cursor_next_key            = '<C-n>'
+    let g:multi_cursor_prev_key            = '<C-p>'
+    let g:multi_cursor_skip_key            = '<C-x>'
+    let g:multi_cursor_quit_key            = '<Esc>'
+
 Plug 'sbdchd/neoformat' "formatting tool
 Plug 'francoiscabrol/ranger.vim'
     let g:ranger_map_keys = 0 "disable default key map
@@ -302,6 +314,8 @@ nmap <Leader>R :RangerCurrentFile<CR>
 
 nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <C-b> :call LanguageClient#textDocument_definition()<CR>
+
+nnoremap <C-A-n> i<CR><Esc>
 "---------------------------------------------
 "autocmd actions
 "---------------------------------------------
