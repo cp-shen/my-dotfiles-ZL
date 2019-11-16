@@ -319,6 +319,12 @@ function! MyVimEnterAction()
 endfunction
 autocmd VimEnter * call MyVimEnterAction()
 
+"run neoformat on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
 "---------------------------------------------
 "environment variables
 "---------------------------------------------
