@@ -11,4 +11,4 @@ set multiple-cursors
 
 nnoremap <C-A-n> i<CR><Esc>
 
-set iskeyword-=_
+" set iskeyword-=_
