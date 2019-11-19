@@ -1,11 +1,14 @@
 "---------------------------------------------
 "install plugins using vim-plug
 "---------------------------------------------
-"Specify a directory for plugins
-"- For Neovim: ~/.local/share/nvim/plugged
-"- Avoid using standard Vim directory names like 'plugin'
-" plug#begin('~/.vim/plugged')
-call plug#begin('~/.vim/bundle')
+
+if isdirectory($HOME . '/.vim/boundle')
+    let g:plugdir = '~/.vim/bundle'
+elseif isdirectory($HOME . '/.vim/plugged')
+    let g:plugdir = '~/.vim/plugged'
+endif
+
+call plug#begin(plugdir)
 
 "tools
 Plug 'vim-scripts/DoxygenToolKit.vim'
