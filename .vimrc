@@ -319,7 +319,7 @@ nmap <Leader>R :RangerCurrentFile<CR>
 nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <C-b> :call LanguageClient#textDocument_definition()<CR>
 
-nnoremap <C-A-n> i<CR><Esc>
+nnoremap <Leader><CR> i<CR><Esc>
 "---------------------------------------------
 "autocmd actions
 "---------------------------------------------
