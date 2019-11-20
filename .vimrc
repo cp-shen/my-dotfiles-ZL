@@ -259,6 +259,8 @@ nnoremap <Leader>bt :BTags<CR>
 nnoremap <Leader>li :Lines<CR>
 nnoremap <Leader>bl :BLines<CR>
 
+nmap <Leader><Tab> :History<CR>
+
 "delete buffer
 nnoremap <Leader>bd :bd<CR>
 
@@ -283,7 +285,6 @@ nnoremap <Leader>td :tabclose<CR>
 
 "quick switch to another window
 nmap <Leader><Space> <C-w>w
-nmap <Leader><Tab> <C-w>p
 
 nmap <Leader>nh :noh<CR>
 
