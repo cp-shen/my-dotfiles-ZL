@@ -378,3 +378,8 @@ au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
 
 "set underscore to be a word seperator
 set iskeyword-=_
+
+"when navigating deoplete list, do not open scratch buffer
+set completeopt-=preview
+
+
