@@ -252,6 +252,7 @@ nnoremap <Leader>sw :StripWhitespace<CR>
 
 "shortcut to use fzf
 nnoremap <Leader>H :History<CR>
+nnoremap <Leader>hh :History<CR>
 nnoremap <Leader>F :Files<CR>
 nnoremap <Leader>B :Buffers<CR>
 nnoremap <Leader>ta :Tags<CR>
@@ -259,7 +260,7 @@ nnoremap <Leader>bt :BTags<CR>
 nnoremap <Leader>li :Lines<CR>
 nnoremap <Leader>bl :BLines<CR>
 
-nmap <Leader><Tab> :History<CR>
+nmap <Leader><Tab> :History<CR><CR>
 
 "delete buffer
 nnoremap <Leader>bd :bd<CR>
