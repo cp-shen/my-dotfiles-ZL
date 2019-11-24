@@ -219,11 +219,11 @@ let g:load_doxygen_syntax = 1
 "set Leader key
 map <Space> <Leader>
 
-"set F2 key to show full path
+"set key to show full path
 nnoremap <F2> :echo expand('%:p')<CR>
 
 "bind key to toggle NERDTree
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <Leader>N :NERDTreeToggle<CR>
 
 "toggle lsp context menu
 nnoremap <Leader>L :call LanguageClient_contextMenu()<CR>
