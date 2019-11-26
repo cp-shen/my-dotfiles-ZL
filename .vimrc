@@ -254,6 +254,7 @@ nnoremap <Leader>sw :StripWhitespace<CR>
 nnoremap <Leader>H :History<CR>
 nnoremap <Leader>hi :History<CR>
 nnoremap <Leader>F :Files<CR>
+nnoremap <Leader>fi :Files<CR>
 nnoremap <Leader>B :Buffers<CR>
 nnoremap <Leader>ta :Tags<CR>
 nnoremap <Leader>bt :BTags<CR>
