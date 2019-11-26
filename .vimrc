@@ -251,7 +251,8 @@ nmap <Leader><C-v> "+p
 nnoremap <Leader>sw :StripWhitespace<CR>
 
 "shortcut to use fzf
-nnoremap <Leader>h :History<CR>
+nnoremap <Leader>H :History<CR>
+nnoremap <Leader>hi :History<CR>
 nnoremap <Leader>F :Files<CR>
 nnoremap <Leader>B :Buffers<CR>
 nnoremap <Leader>ta :Tags<CR>
