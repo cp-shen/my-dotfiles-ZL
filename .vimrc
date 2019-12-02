@@ -283,8 +283,7 @@ nnoremap <Leader>td :tabclose<CR>
 "nnoremap <C-j> :bnext<CR>
 "nnoremap <C-k> :bprev<CR>
 
-"quick switch to another window
-nmap <Leader><Space> <C-w>w
+nmap <Leader><Space> :History<CR>
 
 nmap <Leader>nh :noh<CR>
 
