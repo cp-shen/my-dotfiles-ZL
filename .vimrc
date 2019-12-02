@@ -280,7 +280,7 @@ nnoremap <Leader>tt :tabnew term://zsh<CR>a
 nnoremap <Leader>td :tabclose<CR>
 
 "navigation of buffer
-"nnoremap <C-j> :bnext<CR>
+
 "nnoremap <C-k> :bprev<CR>
 
 nmap <Leader><Space> :History<CR>
@@ -381,4 +381,7 @@ au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.vimdict'
 "when navigating deoplete list, do not open scratch buffer
 set completeopt-=preview
 
-
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
