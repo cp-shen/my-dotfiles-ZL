@@ -14,30 +14,53 @@ local globalKeys =
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
 
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   --awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
 
   -- Default client focus
-  awful.key(
-    {modkey},
-    'd',
-    function()
-      awful.client.focus.byidx(1)
-    end,
-    {description = 'focus next by index', group = 'client'}
+  awful.key({modkey},
+          'w',
+          function()
+              awful.client.focus.global_bydirection("up")
+              if client.focus then client.focus:raise() end
+          end,
+          {description = 'focus up',
+           group = 'client'}
   ),
-  awful.key(
-    {modkey},
-    'a',
-    function()
-      awful.client.focus.byidx(-1)
-    end,
-    {description = 'focus previous by index', group = 'client'}
+
+  awful.key({modkey},
+          's',
+          function()
+              awful.client.focus.global_bydirection("down")
+              if client.focus then client.focus:raise() end
+          end,
+          {description = 'focus down', group = 'client'}
   ),
+
+  awful.key(
+          {modkey},
+          'a',
+          function()
+              awful.client.focus.global_bydirection("left")
+              if client.focus then client.focus:raise() end
+          end,
+          {description = 'focus left', group = 'client'}
+  ),
+
+  awful.key(
+          {modkey},
+          'd',
+          function()
+              awful.client.focus.global_bydirection("right")
+              if client.focus then
+                  client.focus:raise()
+              end
+          end,
+          { description = 'focus right', group = 'client' }
+  ),
+
   awful.key(
     {modkey},
-    'a',
+    'r',
     function()
       local s = awful.screen.focused()
       if s and s.left_panel then
