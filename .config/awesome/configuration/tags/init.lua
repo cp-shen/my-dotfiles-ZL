@@ -56,10 +56,9 @@ awful.screen.connect_for_each_screen(
   function(s)
     for i, tag in pairs(tags) do
       awful.tag.add(
-        i,
+        tostring(i),
         {
           icon = tag.icon,
-          icon_only = true,
           layout = awful.layout.suit.tile,
           gap_single_client = false,
           gap = 4,

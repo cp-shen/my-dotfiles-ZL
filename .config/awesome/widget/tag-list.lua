@@ -1,9 +1,11 @@
 local awful = require('awful')
+local gears = require('gears')
 local wibox = require('wibox')
 local dpi = require('beautiful').xresources.apply_dpi
 local capi = {button = _G.button}
 local clickable_container = require('widget.material.clickable-container')
 local modkey = require('configuration.keys.mod').modKey
+
 --- Common method to create buttons.
 -- @tab buttons
 -- @param object
@@ -52,15 +54,15 @@ local function list_update(w, buttons, label, data, objects)
       ib = wibox.widget.imagebox()
       tb = wibox.widget.textbox()
       bgb = wibox.container.background()
-      tbm = wibox.container.margin(tb, dpi(4), dpi(16))
-      ibm = wibox.container.margin(ib, dpi(12), dpi(12), dpi(12), dpi(12))
+      tbm = wibox.container.margin(tb, dpi(4), dpi(0))
+      ibm = wibox.container.margin(ib, dpi(4), dpi(4), dpi(4), dpi(4))
       l = wibox.layout.fixed.horizontal()
       bg_clickable = clickable_container()
 
       -- All of this is added in a fixed widget
       l:fill_space(true)
+      l:add(tbm)
       l:add(ibm)
-      -- l:add(tbm)
       bg_clickable:set_widget(l)
 
       -- And all of this gets a background
@@ -108,11 +110,13 @@ local function list_update(w, buttons, label, data, objects)
   end
 end
 
+local widget_template = { }
+
 local TagList = function(s)
-  return awful.widget.taglist(
-    s,
-    awful.widget.taglist.filter.all,
-    awful.util.table.join(
+  return awful.widget.taglist{
+    screen = s,
+    filter = awful.widget.taglist.filter.all,
+    buttons = awful.util.table.join(
       awful.button(
         {},
         1,
@@ -155,9 +159,11 @@ local TagList = function(s)
         end
       )
     ),
-    {},
-    list_update,
-    wibox.layout.fixed.vertical()
-  )
+    style = {},
+    update_function = list_update,
+    layout = wibox.layout.fixed.vertical(),
+    --widget_template = widget_template,
+  }
 end
+
 return TagList
