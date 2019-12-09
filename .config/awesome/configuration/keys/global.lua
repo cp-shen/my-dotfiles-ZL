@@ -41,7 +41,7 @@ local globalKeys =
         s.left_panel:toggle("drun")
       end
     end,
-    {description = 'show app menu', group = 'awesome'}
+    {description = 'show app menu', group = 'launcher'}
   ),
   awful.key(
     {modkey},
@@ -52,7 +52,7 @@ local globalKeys =
             s.left_panel:toggle("window")
         end
     end,
-    {description = 'show windows', group = 'awesome'}
+    {description = 'show windows', group = 'launcher'}
   ),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
@@ -67,20 +67,20 @@ local globalKeys =
     {description = 'go back', group = 'client'}
   ),
   -- Programms
-  awful.key(
-    {modkey},
-    'l',
-    function()
-      awful.spawn(apps.default.lock)
-    end
-  ),
-  awful.key(
-    {},
-    'Print',
-    function()
-      awful.util.spawn_with_shell('maim -s | xclip -selection clipboard -t image/png')
-    end
-  ),
+  --awful.key(
+  --  {modkey},
+  --  'l',
+  --  function()
+  --    awful.spawn(apps.default.lock)
+  --  end
+  --),
+  --awful.key(
+  --  {},
+  --  'Print',
+  --  function()
+  --    awful.util.spawn_with_shell('maim -s | xclip -selection clipboard -t image/png')
+  --  end
+  --),
   -- Standard program
   awful.key(
     {modkey},
