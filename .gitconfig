@@ -14,5 +14,3 @@
 [mergetool "vimdiff"]
     ;cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[http]
-	proxy = http://120.0.0.1:7890
