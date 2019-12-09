@@ -164,27 +164,38 @@ local globalKeys =
     end,
     {description = 'dropdown application', group = 'launcher'}
   ),
-  -- Widgets popups
+
+  -- Widgests popups
+  --awful.key(
+  --  {altkey},
+  --  'h',
+  --  function()
+  --    if beautiful.fs then
+  --      beautiful.fs.show(7)
+  --    end
+  --  end,
+  --  {description = 'show filesystem', group = 'widgets'}
+  --),
+  --awful.key(
+  --  {altkey},
+  --  'w',
+  --  function()
+  --    if beautiful.weather then
+  --      beautiful.weather.show(7)
+  --    end
+  --  end,
+  --  {description = 'show weather', group = 'widgets'}
+  --),
+
   awful.key(
-    {altkey},
-    'h',
+    { modkey, 'Control' },
+    "s",
     function()
-      if beautiful.fs then
-        beautiful.fs.show(7)
-      end
+      awful.screen.focus_relative(1)
     end,
-    {description = 'show filesystem', group = 'widgets'}
+    { description = "focus the next screen", group = "screen" }
   ),
-  awful.key(
-    {altkey},
-    'w',
-    function()
-      if beautiful.weather then
-        beautiful.weather.show(7)
-      end
-    end,
-    {description = 'show weather', group = 'widgets'}
-  ),
+
   -- Brightness
   awful.key(
     {},

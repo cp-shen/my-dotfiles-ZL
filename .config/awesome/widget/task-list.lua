@@ -186,14 +186,14 @@ local tasklist_buttons =
     {},
     4,
     function()
-      awful.client.focus.byidx(1)
+      awful.client.focus.byidx(-1)
     end
   ),
   awful.button(
     {},
     5,
     function()
-      awful.client.focus.byidx(-1)
+      awful.client.focus.byidx(1)
     end
   )
 )

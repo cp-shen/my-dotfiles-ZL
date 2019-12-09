@@ -21,6 +21,22 @@ local clientKeys =
       c:kill()
     end,
     {description = 'close', group = 'client'}
+  ),
+  awful.key(
+    {modkey},
+    'm',
+    function(c)
+        c.maximized = not c.maximized
+    end,
+    {description = 'toggle maximized', group = 'client'}
+  ),
+  awful.key(
+    {modkey},
+    'n',
+    function(c)
+        c.minimized = not c.minimized
+    end,
+    {description = 'toggle minimized', group = 'client'}
   )
 )
 
