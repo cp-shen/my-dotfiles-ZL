@@ -16,7 +16,7 @@ return function(screen, panel, action_bar_width)
   -- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>')
   -- textclock.forced_height = 56
 
-  local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(8), dpi(8))
+  local clock_widget = wibox.container.margin(textclock, dpi(8), dpi(8), dpi(4), dpi(4))
   local systray = wibox.widget.systray()
   systray:set_horizontal(false)
   systray:set_base_size(24)

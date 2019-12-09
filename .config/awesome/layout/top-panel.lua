@@ -6,6 +6,7 @@ local gears = require('gears')
 local clickable_container = require('widget.material.clickable-container')
 local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
+local top_bar_width = require('configuration.size').top_bar_width
 
 local dpi = require('beautiful').xresources.apply_dpi
 
@@ -73,14 +74,14 @@ end
 local TopPanel = function(s, offset)
   local offsetx = 0
   if offset == true then
-    offsetx = dpi(48)
+    offsetx = dpi(top_bar_width)
   end
   local panel =
     wibox(
     {
       ontop = true,
       screen = s,
-      height = dpi(48),
+      height = dpi(top_bar_width),
       width = s.geometry.width - offsetx,
       x = s.geometry.x + offsetx,
       y = s.geometry.y,
@@ -88,14 +89,14 @@ local TopPanel = function(s, offset)
       bg = beautiful.background.hue_800,
       fg = beautiful.fg_normal,
       struts = {
-        top = dpi(48)
+        top = dpi(top_bar_width)
       }
     }
   )
 
   panel:struts(
     {
-      top = dpi(48)
+      top = dpi(top_bar_width)
     }
   )
 

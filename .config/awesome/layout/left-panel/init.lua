@@ -3,9 +3,10 @@ local beautiful = require('beautiful')
 local wibox = require('wibox')
 local apps = require('configuration.apps')
 local dpi = require('beautiful').xresources.apply_dpi
+local left_bar_width = require('configuration.size').left_bar_width
 
 local left_panel = function(screen)
-  local action_bar_width = dpi(48)
+  local action_bar_width = dpi(left_bar_width)
   local panel_content_width = dpi(400)
 
   local panel =

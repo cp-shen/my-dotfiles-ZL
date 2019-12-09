@@ -3,7 +3,11 @@ local mat_colors = require('theme.mat-colors')
 local theme_dir = filesystem.get_configuration_dir() .. '/theme'
 local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
+local top_bar_width = require('configuration.size').top_bar_width
+local left_bar_width = require('configuration.size').left_bar_width
+
 local theme = {}
+
 theme.icons = theme_dir .. '/icons/'
 theme.font = 'Roboto medium 10'
 theme.taglist_font = 'Roboto medium 10'
@@ -71,21 +75,21 @@ local awesome_overrides =
   theme.taglist_bg_empty = theme.background.hue_800
   theme.taglist_bg_occupied =
     'linear:0,0:' ..
-            dpi(48) ..
+            dpi(left_bar_width) ..
             ',0:0,' .. '#c4755c' .. ':0.08,' .. '#c4755c' .. ':0.08,'
             .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
   theme.taglist_bg_urgent =
     'linear:0,0:' ..
-    dpi(48) ..
+    dpi(left_bar_width) ..
       ',0:0,' ..
         theme.accent.hue_500 ..
           ':0.08,' .. theme.accent.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
   theme.taglist_bg_focus =
     'linear:0,0:' ..
-    dpi(48) ..
+    dpi(left_bar_width) ..
       ',0:0,' ..
-        theme.primary.hue_500 ..
-          ':0.08,' .. theme.primary.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
+        theme.fg_normal ..
+          ':0.08,' .. theme.fg_normal .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
 
   -- Tasklist
 
@@ -93,7 +97,7 @@ local awesome_overrides =
   theme.tasklist_bg_normal = theme.background.hue_800
   theme.tasklist_bg_focus =
     'linear:0,0:0,' ..
-    dpi(48) ..
+    dpi(top_bar_width) ..
       ':0,' ..
         theme.background.hue_800 ..
           ':0.95,' .. theme.background.hue_800 .. ':0.95,' .. theme.fg_normal .. ':1,' .. theme.fg_normal

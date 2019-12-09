@@ -33,7 +33,7 @@ local widget =
   layout = wibox.layout.fixed.horizontal
 }
 
-local widget_button = clickable_container(wibox.container.margin(widget, dpi(14), dpi(14), 4, 4))
+local widget_button = clickable_container(wibox.container.margin(widget, dpi(8), dpi(8), dpi(4), dpi(4)))
 widget_button:buttons(
   gears.table.join(
     awful.button(
@@ -131,10 +131,13 @@ watch(
     if (roundedCharge == 0) then
       batteryIconName = batteryIconName .. '-outline'
     elseif (roundedCharge ~= 100) then
-      batteryIconName = batteryIconName .. '-' .. roundedCharge
+      --naughty.notify({text = tostring(roundedCharge)})
+      --FIXME: roundedCharge is NaN here!
+      batteryIconName = batteryIconName .. '-' .. tostring(roundedCharge)
     end
 
-    widget.icon:set_image(PATH_TO_ICONS .. batteryIconName .. '.svg')
+      --FIXME: use batteryIconName
+    widget.icon:set_image(PATH_TO_ICONS .. 'battery' .. '.svg')
     -- Update popup text
     battery_popup.text = string.gsub(stdout, '\n$', '')
     collectgarbage('collect')
