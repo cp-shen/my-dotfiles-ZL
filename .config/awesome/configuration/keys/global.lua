@@ -150,8 +150,8 @@ local globalKeys =
     'n',
     function()
       local c = awful.client.restore()
-      -- Focus restored client
       if c then
+        -- Focus restored client
         _G.client.focus = c
         c:raise()
       end

@@ -27,6 +27,8 @@ local clientKeys =
     'm',
     function(c)
         c.maximized = not c.maximized
+        c:raise()
+        client.focus = c
     end,
     {description = 'toggle maximized', group = 'client'}
   ),
