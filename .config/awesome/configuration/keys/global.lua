@@ -240,30 +240,6 @@ local globalKeys =
       awful.spawn('amixer -D pulse set Master 1+ toggle')
     end,
     {description = 'toggle mute', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86AudioNext',
-    function()
-      --
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86PowerDown',
-    function()
-      --
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86PowerOff',
-    function()
-      _G.exit_screen_show()
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
   )
 )
 

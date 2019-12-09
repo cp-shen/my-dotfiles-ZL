@@ -44,7 +44,7 @@ local clientKeys =
     function(c)
       c:swap(awful.client.getmaster())
     end,
-    {description = 'set client as master', group = 'layout'}
+    {description = 'set client as master', group = 'client'}
   )
 )
 
