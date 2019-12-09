@@ -96,6 +96,7 @@ local awesome_overrides =
   theme.tasklist_fg_focus = '#DDDDDD'
   theme.tasklist_fg_urgent = theme.fg_normal
   theme.tasklist_fg_normal = '#AAAAAA'
+  theme.tasklist_fg_minimize = '#9dd49e'
 
   theme.icon_theme = 'Papirus-Dark'
 
