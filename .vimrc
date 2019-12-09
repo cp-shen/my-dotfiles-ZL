@@ -2,7 +2,7 @@
 "install plugins using vim-plug
 "---------------------------------------------
 
-if isdirectory($HOME . '/.vim/boundle')
+if isdirectory($HOME . '/.vim/bundle')
     let g:plugdir = '~/.vim/bundle'
 elseif isdirectory($HOME . '/.vim/plugged')
     let g:plugdir = '~/.vim/plugged'
@@ -104,7 +104,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-plug'
 
 "fzf for file finding
-"Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf' ", { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "plugins for nvim only
