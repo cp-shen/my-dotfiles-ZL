@@ -34,14 +34,25 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'e',
+    'r',
     function()
       local s = awful.screen.focused()
       if s and s.left_panel then
-        s.left_panel:toggle(true)
+        s.left_panel:toggle("drun")
       end
     end,
-    {description = 'show main menu', group = 'awesome'}
+    {description = 'show app menu', group = 'awesome'}
+  ),
+  awful.key(
+    {modkey},
+    'e',
+    function()
+        local s = awful.screen.focused()
+        if s and s.left_panel then
+            s.left_panel:toggle("window")
+        end
+    end,
+    {description = 'show windows', group = 'awesome'}
   ),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(

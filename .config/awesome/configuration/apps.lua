@@ -8,6 +8,7 @@ return {
     terminal = 'alacritty',
     editor = 'code',
     rofi = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show drun -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
+    rofi_window = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show window -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     lock = 'i3lock-fancy-rapid 5 3 -k --timecolor=ffffffff --datecolor=ffffffff',
     quake = 'alacritty --title QuakeTerminal'
   },

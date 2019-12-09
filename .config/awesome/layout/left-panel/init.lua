@@ -40,27 +40,34 @@ local left_panel = function(screen)
     height = screen.geometry.height
   }
 
-  function panel:run_rofi()
-    _G.awesome.spawn(
-      apps.default.rofi,
-      false,
-      false,
-      false,
-      false,
-      function()
-        panel:toggle()
-      end
-    )
+  function panel:run_rofi(rofi_action)
+    local action_map = {
+      window = apps.default.rofi_window,
+      drun = apps.default.rofi,
+    }
+
+    local action = rofi_action and action_map[rofi_action]
+
+    if action then
+      _G.awesome.spawn(
+        action,
+        false,
+        false,
+        false,
+        false,
+        function() panel:toggle() end
+      )
+    end
   end
 
-  local openPanel = function(should_run_rofi)
+  local openPanel = function(rofi_action)
     panel.width = action_bar_width + panel_content_width
     backdrop.visible = true
     panel.visible = false
     panel.visible = true
     panel:get_children_by_id('panel_content')[1].visible = true
-    if should_run_rofi then
-      panel:run_rofi()
+    if rofi_action then
+      panel:run_rofi(rofi_action)
     end
     panel:emit_signal('opened')
   end
@@ -72,10 +79,10 @@ local left_panel = function(screen)
     panel:emit_signal('closed')
   end
 
-  function panel:toggle(should_run_rofi)
+  function panel:toggle(rofi_action)
     self.opened = not self.opened
     if self.opened then
-      openPanel(should_run_rofi)
+      openPanel(rofi_action)
     else
       closePanel()
     end
