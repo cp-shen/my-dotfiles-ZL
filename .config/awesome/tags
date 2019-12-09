@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+1) Get all the dependencies	README.md	/^### 1) Get all the dependencies$/;"	S
+2) Clone the configuration	README.md	/^### 2) Clone the configuration$/;"	S
+3) Set the themes	README.md	/^### 3) Set the themes$/;"	S
+4) Read the documentation	README.md	/^### 4) Read the documentation$/;"	S
+Configuration	configuration/README.md	/^## Configuration$/;"	s
+Installation	README.md	/^## Installation$/;"	s
+Layout	layout/README.md	/^## Layout$/;"	s
+LayoutBox	layout/top-panel.lua	/^local LayoutBox = function(s)$/;"	f
+Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)	README.md	/^## Material and Mouse driven theme for [AwesomeWM 4.3](https:\/\/awesomewm.org\/) $/;"	s
+TagList	widget/tag-list.lua	/^local TagList = function(s)$/;"	f
+TaskList	widget/task-list.lua	/^local TaskList = function(s)$/;"	f
+TopPanel	layout/top-panel.lua	/^local TopPanel = function(s, offset)$/;"	f
+awesome_overrides	theme/PapyElGringo-theme/init.lua	/^local awesome_overrides = function(theme)$/;"	f
+backdrop	module/backdrop.lua	/^local function backdrop(c)$/;"	f
+backend	configuration/compton.conf	/^backend = "glx";$/;"	k
+background	configuration/compton.conf	/^blur-background = true;$/;"	k
+build	widget/material/clickable-container.lua	/^function build(widget)$/;"	f
+build	widget/material/icon-button.lua	/^function build(imagebox, args)$/;"	f
+buildButton	module/exit-screen.lua	/^local buildButton = function(icon)$/;"	f
+changesOnScreen	module/decorate-client.lua	/^local function changesOnScreen(currentScreen)$/;"	f
+client.shape	module/decorate-client.lua	/^    client.shape = function(cr, w, h)$/;"	f
+clientCallback	module/decorate-client.lua	/^function clientCallback(client)$/;"	f
+closePanel	layout/left-panel/init.lua	/^  local closePanel = function()$/;"	f
+close_quake	module/quake-terminal.lua	/^function close_quake()$/;"	f
+corners	configuration/compton.conf	/^detect-rounded-corners = true;$/;"	k
+create_buttons	widget/tag-list.lua	/^local function create_buttons(buttons, object)$/;"	f
+create_buttons	widget/task-list.lua	/^local function create_buttons(buttons, object)$/;"	f
+create_shell	module/quake-terminal.lua	/^function create_shell()$/;"	f
+dbe	configuration/compton.conf	/^dbe = false;$/;"	k
+delta	configuration/compton.conf	/^fade-delta = 4;$/;"	k
+exclude	configuration/compton.conf	/^blur-background-exclude = [$/;"	k
+exclude	configuration/compton.conf	/^fade-exclude = [ ];$/;"	k
+exclude	configuration/compton.conf	/^focus-exclude = [ "class_g = 'Cairo-clock'" ];$/;"	k
+exclude	configuration/compton.conf	/^shadow-exclude = [$/;"	k
+exit_command	module/exit-screen.lua	/^function exit_command()$/;"	f
+exit_screen_hide	module/exit-screen.lua	/^function exit_screen_hide()$/;"	f
+exit_screen_show	module/exit-screen.lua	/^function exit_screen_show()$/;"	f
+fading	configuration/compton.conf	/^fading = true;$/;"	k
+fixed	configuration/compton.conf	/^blur-background-fixed = false;    $/;"	k
+fmax	configuration/tags/layouts/single-maximized.lua	/^local function fmax(p, fs)$/;"	f
+focused	configuration/compton.conf	/^mark-ovredir-focused = true;$/;"	k
+focused	configuration/compton.conf	/^mark-wmwin-focused = true;$/;"	k
+frame	configuration/compton.conf	/^blur-background-frame = true;$/;"	k
+front	configuration/compton.conf	/^glx-copy-from-front=false;$/;"	k
+grabText	widget/wifi/init.lua	/^local function grabText()$/;"	f
+include	configuration/compton.conf	/^invert-color-include = [ ];$/;"	k
+leader	configuration/compton.conf	/^detect-client-leader = true;$/;"	k
+left_panel	layout/left-panel/init.lua	/^local left_panel = function(screen)$/;"	f
+list_update	widget/tag-list.lua	/^local function list_update(w, buttons, label, data, objects)$/;"	f
+list_update	widget/task-list.lua	/^local function list_update(w, buttons, label, data, objects)$/;"	f
+lock_command	module/exit-screen.lua	/^function lock_command()$/;"	f
+log_this	module/notifications.lua	/^function log_this(title, txt)$/;"	f
+mat_list_item.mt:__call	widget/material/icon.lua	/^function mat_list_item.mt:__call(...)$/;"	f
+mat_list_item.mt:__call	widget/material/list-item.lua	/^function mat_list_item.mt:__call(...)$/;"	f
+mat_list_item:build_clickable_container	widget/material/list-item.lua	/^function mat_list_item:build_clickable_container()$/;"	f
+mat_list_item:build_separator	widget/material/list-item.lua	/^function mat_list_item:build_separator()$/;"	f
+mat_list_item:fit	widget/material/icon.lua	/^function mat_list_item:fit(_, width, height)$/;"	f
+mat_list_item:fit	widget/material/list-item.lua	/^function mat_list_item:fit(_, width)$/;"	f
+mat_list_item:get_children	widget/material/list-item.lua	/^function mat_list_item:get_children()$/;"	f
+mat_list_item:get_clickable	widget/material/list-item.lua	/^function mat_list_item:get_clickable()$/;"	f
+mat_list_item:get_content	widget/material/list-item.lua	/^function mat_list_item:get_content()$/;"	f
+mat_list_item:get_divider	widget/material/list-item.lua	/^function mat_list_item:get_divider()$/;"	f
+mat_list_item:get_icon	widget/material/icon.lua	/^function mat_list_item:get_icon()$/;"	f
+mat_list_item:get_prefix	widget/material/list-item.lua	/^function mat_list_item:get_prefix()$/;"	f
+mat_list_item:get_size	widget/material/icon.lua	/^function mat_list_item:get_size()$/;"	f
+mat_list_item:get_suffix	widget/material/list-item.lua	/^function mat_list_item:get_suffix()$/;"	f
+mat_list_item:layout	widget/material/icon.lua	/^function mat_list_item:layout(_, width, height)$/;"	f
+mat_list_item:layout	widget/material/list-item.lua	/^function mat_list_item:layout(_, width, height)$/;"	f
+mat_list_item:set_children	widget/material/list-item.lua	/^function mat_list_item:set_children(children)$/;"	f
+mat_list_item:set_clickable	widget/material/list-item.lua	/^function mat_list_item:set_clickable(value)$/;"	f
+mat_list_item:set_content	widget/material/list-item.lua	/^function mat_list_item:set_content(widget)$/;"	f
+mat_list_item:set_divider	widget/material/list-item.lua	/^function mat_list_item:set_divider(value)$/;"	f
+mat_list_item:set_icon	widget/material/icon.lua	/^function mat_list_item:set_icon(icon)$/;"	f
+mat_list_item:set_prefix	widget/material/list-item.lua	/^function mat_list_item:set_prefix(widget)$/;"	f
+mat_list_item:set_size	widget/material/icon.lua	/^function mat_list_item:set_size(size)$/;"	f
+mat_list_item:set_suffix	widget/material/list-item.lua	/^function mat_list_item:set_suffix(widget)$/;"	f
+mat_slider.mt:__call	widget/material/slider.lua	/^function mat_slider.mt:__call(...)$/;"	f
+mat_slider:draw	widget/material/slider.lua	/^function mat_slider:draw(_, cr, width, height)$/;"	f
+mat_slider:fit	widget/material/slider.lua	/^function mat_slider:fit(_, width, height)$/;"	f
+mat_slider:get_read_only	widget/material/slider.lua	/^function mat_slider:get_read_only(value)$/;"	f
+mat_slider:get_value	widget/material/slider.lua	/^function mat_slider:get_value(value)$/;"	f
+mat_slider:layout	widget/material/slider.lua	/^function mat_slider:layout(_, width, height)$/;"	f
+mat_slider:set_read_only	widget/material/slider.lua	/^function mat_slider:set_read_only(value)$/;"	f
+mat_slider:set_value	widget/material/slider.lua	/^function mat_slider:set_value(value)$/;"	f
+max.arrange	configuration/tags/layouts/single-maximized.lua	/^function max.arrange(p)$/;"	f
+max.skip_gap	configuration/tags/layouts/single-maximized.lua	/^function max.skip_gap(nclients, t) -- luacheck: no unused args$/;"	f
+method	configuration/compton.conf	/^blur-method = "kawase";$/;"	k
+new	widget/material/icon.lua	/^local function new(icon, size)$/;"	f
+new	widget/material/list-item.lua	/^local function new(widget)$/;"	f
+new	widget/material/slider.lua	/^local function new(args)$/;"	f
+opacity	configuration/compton.conf	/^active-opacity = 1.0;$/;"	k
+opacity	configuration/compton.conf	/^detect-client-opacity = true;$/;"	k
+opacity	configuration/compton.conf	/^frame-opacity = 1.0;$/;"	k
+opacity	configuration/compton.conf	/^inactive-opacity = 1.0;$/;"	k
+opacity	configuration/compton.conf	/^menu-opacity = 1.0;$/;"	k
+opacity	configuration/compton.conf	/^shadow-opacity = 0.36;$/;"	k
+openPanel	layout/left-panel/init.lua	/^  local openPanel = function(should_run_rofi)$/;"	f
+open_quake	module/quake-terminal.lua	/^function open_quake()$/;"	f
+openclose	configuration/compton.conf	/^no-fading-openclose = false;$/;"	k
+override	configuration/compton.conf	/^inactive-opacity-override = false;$/;"	k
+panel:run_rofi	layout/left-panel/init.lua	/^  function panel:run_rofi()$/;"	f
+panel:toggle	layout/left-panel/init.lua	/^  function panel:toggle(should_run_rofi)$/;"	f
+pixmap	configuration/compton.conf	/^glx-no-rebind-pixmap = true;$/;"	k
+poweroff_command	module/exit-screen.lua	/^function poweroff_command()$/;"	f
+radius	configuration/compton.conf	/^shadow-radius = 7.5;$/;"	k
+reboot_command	module/exit-screen.lua	/^function reboot_command()$/;"	f
+renderClient	module/decorate-client.lua	/^local function renderClient(client, mode)$/;"	f
+run_once	module/auto-start.lua	/^local function run_once(cmd)$/;"	f
+shadow	configuration/compton.conf	/^no-dnd-shadow = false;$/;"	k
+shadow	configuration/compton.conf	/^no-dock-shadow = false;$/;"	k
+shadow	configuration/compton.conf	/^shadow = true;$/;"	k
+shape	configuration/client/rules.lua	/^      shape = function()$/;"	f
+show_battery_warning	widget/battery/init.lua	/^local function show_battery_warning()$/;"	f
+show_battery_warning	widget/package-updater/init.lua	/^local function show_battery_warning()$/;"	f
+step	configuration/compton.conf	/^alpha-step = 0.06;$/;"	k
+step	configuration/compton.conf	/^fade-in-step = 0.03;$/;"	k
+step	configuration/compton.conf	/^fade-out-step = 0.03;$/;"	k
+strength	configuration/compton.conf	/^blur-strength = 5;$/;"	k
+suspend_command	module/exit-screen.lua	/^function suspend_command()$/;"	f
+tagCallback	module/decorate-client.lua	/^function tagCallback(tag)$/;"	f
+theme.tooltip_shape	theme/default-theme.lua	/^  theme.tooltip_shape = function(cr, w, h)$/;"	f
+toggle_quake	module/quake-terminal.lua	/^toggle_quake = function()$/;"	f
+transient	configuration/compton.conf	/^detect-transient = true;$/;"	k
+update	module/backdrop.lua	/^  local function update()$/;"	f
+updateBarsVisibility	layout/init.lua	/^function updateBarsVisibility()$/;"	f
+update_backdrop	module/backdrop.lua	/^local function update_backdrop(w, c)$/;"	f
+wintypes	configuration/compton.conf	/^wintypes:$/;"	k
+x	configuration/compton.conf	/^shadow-offset-x = -11;$/;"	k
+y	configuration/compton.conf	/^shadow-offset-y = -4.5;$/;"	k
