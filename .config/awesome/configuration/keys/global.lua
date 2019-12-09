@@ -36,9 +36,9 @@ local globalKeys =
     {modkey},
     'e',
     function()
-      local c = _G.client.focus
-      if c and c.screen.left_panel then
-        c.screen.left_panel:toggle(true)
+      local s = awful.screen.focused()
+      if s and s.left_panel then
+        s.left_panel:toggle(true)
       end
     end,
     {description = 'show main menu', group = 'awesome'}
