@@ -37,6 +37,14 @@ local clientKeys =
         c.minimized = not c.minimized
     end,
     {description = 'toggle minimized', group = 'client'}
+  ),
+  awful.key(
+    {modkey},
+    'space',
+    function(c)
+      c:swap(awful.client.getmaster())
+    end,
+    {description = 'set client as master', group = 'layout'}
   )
 )
 
