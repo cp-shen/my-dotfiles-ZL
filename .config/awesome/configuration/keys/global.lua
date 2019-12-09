@@ -9,12 +9,15 @@ local apps = require('configuration.apps')
 -- Key bindings
 local globalKeys =
   awful.util.table.join(
+
   -- Hotkeys
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
+
   -- Tag browsing
   awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
+  --awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
+
   -- Default client focus
   awful.key(
     {modkey},
@@ -59,12 +62,9 @@ local globalKeys =
     {modkey},
     'Tab',
     function()
-      awful.client.focus.history.previous()
-      if _G.client.focus then
-        _G.client.focus:raise()
-      end
+      awful.screen.focus_relative(1)
     end,
-    {description = 'go back', group = 'client'}
+    { description = "focus the next screen", group = "screen" }
   ),
   -- Programms
   --awful.key(
@@ -200,15 +200,6 @@ local globalKeys =
   --  end,
   --  {description = 'show weather', group = 'widgets'}
   --),
-
-  awful.key(
-    { modkey, 'Control' },
-    "s",
-    function()
-      awful.screen.focus_relative(1)
-    end,
-    { description = "focus the next screen", group = "screen" }
-  ),
 
   -- Brightness
   awful.key(
