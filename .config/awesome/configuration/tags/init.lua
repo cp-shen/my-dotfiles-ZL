@@ -18,19 +18,19 @@ local tags = {
   {
     icon = icons.social,
     type = 'social',
-    defaultApp = 'station',
+    defaultApp = '',
     screen = 1
   },
   {
     icon = icons.folder,
     type = 'files',
-    defaultApp = 'nautilus',
+    defaultApp = 'dolphin',
     screen = 1
   },
   {
     icon = icons.music,
     type = 'music',
-    defaultApp = 'youtube-music',
+    defaultApp = '',
     screen = 1
   },
   {

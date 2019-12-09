@@ -34,7 +34,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'r',
+    'a',
     function()
       local s = awful.screen.focused()
       if s and s.left_panel then
