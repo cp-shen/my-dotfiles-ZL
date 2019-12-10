@@ -117,6 +117,22 @@ local globalKeys =
           ),
           awful.key(
                   { modkey },
+                  'w',
+                  function()
+                      awful.spawn(apps.default.browser)
+                  end,
+                  { description = 'open a terminal', group = 'launcher' }
+          ),
+          awful.key(
+                  { modkey },
+                  'v',
+                  function()
+                      awful.spawn(apps.default.editor)
+                  end,
+                  { description = 'open a terminal', group = 'launcher' }
+          ),
+          awful.key(
+                  { modkey },
                   'r',
                   function()
                       awful.spawn(
