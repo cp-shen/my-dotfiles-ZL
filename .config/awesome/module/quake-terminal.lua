@@ -16,6 +16,8 @@ end
 
 function open_quake()
   quake_client.hidden = false
+  quake_client:raise()
+  client.focus = quake_client
 end
 
 function close_quake()
