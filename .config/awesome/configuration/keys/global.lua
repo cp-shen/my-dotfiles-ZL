@@ -62,7 +62,7 @@ local globalKeys =
 
   awful.key(
     {modkey},
-    'r',
+    'a',
     function()
       local s = awful.screen.focused()
       if s and s.left_panel then
@@ -73,7 +73,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'e',
+    'Tab',
     function()
         local s = awful.screen.focused()
         if s and s.left_panel then
@@ -184,7 +184,7 @@ local globalKeys =
   --  end,
   --  {description = 'select previous', group = 'layout'}
   --),
-          
+
   awful.key(
     {modkey, 'Control'},
     'n',
