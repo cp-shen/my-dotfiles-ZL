@@ -2,6 +2,7 @@ local awful = require('awful')
 local gears = require('gears')
 local client_keys = require('configuration.client.keys')
 local client_buttons = require('configuration.client.buttons')
+local apps = require('configuration.apps')
 
 -- Rules
 awful.rules.rules = {
@@ -26,8 +27,20 @@ awful.rules.rules = {
     }
   },
   {
-    rule_any = {name = {'QuakeTerminal'}},
-    properties = {skip_decoration = true}
+    rule = { class = apps.const.browserClass },
+    properties = { tag = "1", switchtotag = true, }
+  },
+  --{
+  --  rule = { class = apps.const.termClass },
+  --  properties = { tag = "2", switchtotag = true, }
+  --},
+  {
+    rule = { class = apps.const.editorClass },
+    properties = { tag = "3", switchtotag = true, }
+  },
+  {
+    rule_any = { class = apps.const.quakeClass },
+    properties = { skip_decoration = true }
   },
   -- Titlebars
   {
@@ -44,5 +57,9 @@ awful.rules.rules = {
       end,
       skip_decoration = true
     }
-  }
+  },
+  --{ rule = {},
+  --  except_any = { class = { "Firefox", "Vim" } },
+  --  properties = { floating = true }
+  --},
 }

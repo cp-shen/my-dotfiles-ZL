@@ -121,7 +121,7 @@ local globalKeys =
                   function()
                       awful.spawn(apps.default.browser)
                   end,
-                  { description = 'open a terminal', group = 'launcher' }
+                  { description = 'open web browser', group = 'launcher' }
           ),
           awful.key(
                   { modkey },
@@ -129,7 +129,7 @@ local globalKeys =
                   function()
                       awful.spawn(apps.default.editor)
                   end,
-                  { description = 'open a terminal', group = 'launcher' }
+                  { description = 'open neovim', group = 'launcher' }
           ),
           awful.key(
                   { modkey },

@@ -6,14 +6,15 @@ return {
   -- List of apps to start by default on some actions
   default = {
     terminal = 'alacritty',
-    editor = 'kitty -- nvim',
+    editor = 'kitty --class=kitty-nvim -- nvim',
     rofi = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show drun -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     rofi_window = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show window -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     --lock = 'i3lock-fancy-rapid 5 3 -k --timecolor=ffffffff --datecolor=ffffffff',
-    quake = 'alacritty --title QuakeTerminal',
+    quake = 'alacritty --class alacritty-quake',
     browser = 'google-chrome-stable',
     file_manager = 'dolphin',
   },
+
   -- List of apps to start once on start-up
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
@@ -21,5 +22,13 @@ return {
     'xfce4-power-manager', -- Power manager
     'nm-applet', -- network manager
     --'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)' -- credential manager
+  },
+
+  -- used to define rules
+  const = {
+    termClass = "Alacritty",
+    browserClass = "Google-chrome",
+    editorClass = "kitty-nvim",
+    quakeClass = "alacritty-quake",
   }
 }
