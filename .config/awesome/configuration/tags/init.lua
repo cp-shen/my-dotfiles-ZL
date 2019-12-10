@@ -28,24 +28,24 @@ local tags = {
       defaultApp = apps.default.file_manager,
       screen = 1
   },
-  {
-    icon = icons.social,
-    type = 'social',
-    defaultApp = '',
-    screen = 1
-  },
-  {
-    icon = icons.music,
-    type = 'music',
-    defaultApp = '',
-    screen = 1
-  },
-  {
-    icon = icons.game,
-    type = 'game',
-    defaultApp = '',
-    screen = 1
-  },
+  --{
+  --  icon = icons.social,
+  --  type = 'social',
+  --  defaultApp = '',
+  --  screen = 1
+  --},
+  --{
+  --  icon = icons.music,
+  --  type = 'music',
+  --  defaultApp = '',
+  --  screen = 1
+  --},
+  --{
+  --  icon = icons.game,
+  --  type = 'game',
+  --  defaultApp = '',
+  --  screen = 1
+  --},
   {
     icon = icons.lab,
     type = 'any',

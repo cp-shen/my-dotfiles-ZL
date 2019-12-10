@@ -63,8 +63,8 @@ awful.rules.rules = {
       skip_decoration = true
     }
   },
-  --{ rule = {},
-  --  except_any = { class = { "Firefox", "Vim" } },
-  --  properties = { floating = true }
-  --},
+  { rule = {},
+    except_any = { class = apps.const_array, name = apps.const_array },
+    properties = { tag = "5", switchtotag = true, }
+  },
 }

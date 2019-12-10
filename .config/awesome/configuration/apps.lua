@@ -2,7 +2,8 @@ local filesystem = require('gears.filesystem')
 local with_dpi = require('beautiful').xresources.apply_dpi
 local get_dpi = require('beautiful').xresources.get_dpi
 
-return {
+local apps =
+{
   -- List of apps to start by default on some actions
   default = {
     terminal = 'alacritty',
@@ -32,5 +33,13 @@ return {
     quakeName = "QuakeTerminal",
     fileMangerClass = "dolphin",
     idePattern = "jetbrains",
+    vscodePattern = "code"
   }
 }
+
+apps.const_array = {}
+for _, v in pairs(apps.const) do
+  table.insert(apps.const_array, v)
+end
+
+return apps
