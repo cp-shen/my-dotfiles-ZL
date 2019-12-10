@@ -29,7 +29,7 @@ return function(_, panel)
         {},
         1,
         function()
-          panel:run_rofi()
+          panel:run_rofi("drun")
         end
       )
     )
