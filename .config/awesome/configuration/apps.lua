@@ -10,7 +10,7 @@ return {
     rofi = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show drun -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     rofi_window = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show window -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     --lock = 'i3lock-fancy-rapid 5 3 -k --timecolor=ffffffff --datecolor=ffffffff',
-    quake = 'alacritty --class alacritty-quake',
+    quake = 'alacritty --title QuakeTerminal',
     browser = 'google-chrome-stable',
     file_manager = 'dolphin',
   },
@@ -29,7 +29,7 @@ return {
     termClass = "Alacritty",
     browserClass = "Google-chrome",
     editorClass = "kitty-nvim",
-    quakeClass = "alacritty-quake",
+    quakeName = "QuakeTerminal",
     fileMangerClass = "dolphin",
   }
 }

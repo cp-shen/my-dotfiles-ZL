@@ -43,8 +43,8 @@ awful.rules.rules = {
     properties = { tag = "4", switchtotag = true, }
   },
   {
-    rule_any = { class = apps.const.quakeClass },
-    properties = { skip_decoration = true }
+    rule_any = { name = { apps.const.quakeName } },
+    properties = { skip_decoration = true },
   },
   -- Titlebars
   {
