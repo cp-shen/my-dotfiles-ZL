@@ -5,18 +5,18 @@ local altkey = require('configuration.keys.mod').altKey
 
 local clientKeys =
   awful.util.table.join(
+  --awful.key(
+  --  {modkey},
+  --  'f',
+  --  function(c)
+  --    c.fullscreen = not c.fullscreen
+  --    c:raise()
+  --  end,
+  --  {description = 'toggle fullscreen', group = 'client'}
+  --),
   awful.key(
     {modkey},
-    'f',
-    function(c)
-      c.fullscreen = not c.fullscreen
-      c:raise()
-    end,
-    {description = 'toggle fullscreen', group = 'client'}
-  ),
-  awful.key(
-    {modkey},
-    'q',
+    'Escape',
     function(c)
       c:kill()
     end,
@@ -54,7 +54,7 @@ local clientKeys =
     function(c)
       c:move_to_screen()
     end,
-    { description = "move to screen", group = "client" })
+    { description = "move to next screen", group = "client" })
   )
 
 return clientKeys

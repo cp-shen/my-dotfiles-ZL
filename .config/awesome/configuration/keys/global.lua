@@ -26,7 +26,7 @@ local globalKeys =
               if client.focus then client.focus:raise() end
           end,
           {description = 'focus up',
-           group = 'client'}
+           group = 'focus'}
   ),
 
   awful.key({modkey},
@@ -35,7 +35,7 @@ local globalKeys =
               awful.client.focus.global_bydirection("down")
               if client.focus then client.focus:raise() end
           end,
-          {description = 'focus down', group = 'client'}
+          {description = 'focus down', group = 'focus'}
   ),
 
   awful.key(
@@ -45,7 +45,7 @@ local globalKeys =
               awful.client.focus.global_bydirection("left")
               if client.focus then client.focus:raise() end
           end,
-          {description = 'focus left', group = 'client'}
+          {description = 'focus left', group = 'focus'}
   ),
 
   awful.key(
@@ -57,7 +57,7 @@ local globalKeys =
                   client.focus:raise()
               end
           end,
-          { description = 'focus right', group = 'client' }
+          { description = 'focus right', group = 'focus' }
   ),
 
   awful.key(
@@ -109,7 +109,7 @@ local globalKeys =
   -- Standard program
   awful.key(
     {modkey},
-    'x',
+    'Return',
     function()
       awful.spawn(apps.default.terminal)
     end,
@@ -118,6 +118,16 @@ local globalKeys =
 
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
+
+
+          awful.key({ modkey,           }, 'f', function () awful.layout.set(awful.layout.suit.floating) end,
+                  {description = "use float layout", group = "layout"}),
+
+          awful.key({ modkey,           }, 't', function () awful.layout.set(awful.layout.suit.tile) end,
+                  {description = "use tile layout", group = "layout"}),
+
+          awful.key({ modkey,           }, 'q', function () awful.layout.set(awful.layout.suit.fair) end,
+                  {description = "use quarter layout", group = "layout"}),
 
   --awful.key(
   --  {altkey, 'Shift'},
@@ -343,7 +353,7 @@ for i = 1, 9 do
       end,
       descr_toggle_focus
     )
-  )
+    )
 end
 
 return globalKeys
