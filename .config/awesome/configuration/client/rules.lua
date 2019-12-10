@@ -39,6 +39,10 @@ awful.rules.rules = {
     properties = { tag = "3", switchtotag = true, }
   },
   {
+    rule = { class = apps.const.fileMangerClass },
+    properties = { tag = "4", switchtotag = true, }
+  },
+  {
     rule_any = { class = apps.const.quakeClass },
     properties = { skip_decoration = true }
   },

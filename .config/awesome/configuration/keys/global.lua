@@ -133,6 +133,14 @@ local globalKeys =
           ),
           awful.key(
                   { modkey },
+                  'e',
+                  function()
+                      awful.spawn(apps.default.file_manager)
+                  end,
+                  { description = 'open file manager', group = 'launcher' }
+          ),
+          awful.key(
+                  { modkey },
                   'r',
                   function()
                       awful.spawn(

@@ -30,5 +30,6 @@ return {
     browserClass = "Google-chrome",
     editorClass = "kitty-nvim",
     quakeClass = "alacritty-quake",
+    fileMangerClass = "dolphin",
   }
 }
