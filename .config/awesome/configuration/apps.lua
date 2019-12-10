@@ -31,5 +31,6 @@ return {
     editorClass = "kitty-nvim",
     quakeName = "QuakeTerminal",
     fileMangerClass = "dolphin",
+    idePattern = "jetbrains",
   }
 }

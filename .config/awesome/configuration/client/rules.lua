@@ -36,7 +36,7 @@ awful.rules.rules = {
     properties = { tag = "2", switchtotag = true, }
   },
   {
-    rule = { class = apps.const.editorClass },
+    rule_any = { class = { apps.const.editorClass, apps.const.idePattern, "code" } },
     properties = { tag = "3", switchtotag = true, }
   },
   {
