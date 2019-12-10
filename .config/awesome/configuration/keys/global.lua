@@ -106,15 +106,29 @@ local globalKeys =
   --    awful.util.spawn_with_shell('maim -s | xclip -selection clipboard -t image/png')
   --  end
   --),
-  -- Standard program
-  awful.key(
-    {modkey},
-    'Return',
-    function()
-      awful.spawn(apps.default.terminal)
-    end,
-    {description = 'open a terminal', group = 'launcher'}
-  ),
+
+          awful.key(
+                  { modkey },
+                  'Return',
+                  function()
+                      awful.spawn(apps.default.terminal)
+                  end,
+                  { description = 'open a terminal', group = 'launcher' }
+          ),
+          awful.key(
+                  { modkey },
+                  'r',
+                  function()
+                      awful.spawn(
+                              awful.screen.focused().selected_tag.defaultApp,
+                              {
+                                  tag = _G.mouse.screen.selected_tag,
+                                  placement = awful.placement.bottom_right
+                              }
+                      )
+                  end,
+                  { description = 'open defult app', group = 'launcher' }
+          ),
 
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
