@@ -10,21 +10,27 @@ local tags = {
     screen = 1
   },
   {
+      icon = icons.terminal,
+      type = 'terminal',
+      defaultApp = 'alacritty',
+      screen = 1
+  },
+  {
     icon = icons.code,
     type = 'code',
-    defaultApp = 'code',
+    defaultApp = 'gnvim',
     screen = 1
+  },
+  {
+      icon = icons.folder,
+      type = 'files',
+      defaultApp = 'dolphin',
+      screen = 1
   },
   {
     icon = icons.social,
     type = 'social',
     defaultApp = '',
-    screen = 1
-  },
-  {
-    icon = icons.folder,
-    type = 'files',
-    defaultApp = 'dolphin',
     screen = 1
   },
   {
