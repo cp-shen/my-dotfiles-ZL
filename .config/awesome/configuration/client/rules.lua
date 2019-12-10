@@ -30,10 +30,11 @@ awful.rules.rules = {
     rule = { class = apps.const.browserClass },
     properties = { tag = "1", switchtotag = true, }
   },
-  --{
-  --  rule = { class = apps.const.termClass },
-  --  properties = { tag = "2", switchtotag = true, }
-  --},
+  {
+    rule = { class = apps.const.termClass },
+    except_any = { name = { apps.const.quakeName } },
+    properties = { tag = "2", switchtotag = true, }
+  },
   {
     rule = { class = apps.const.editorClass },
     properties = { tag = "3", switchtotag = true, }
