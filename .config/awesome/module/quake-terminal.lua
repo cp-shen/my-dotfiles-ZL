@@ -42,7 +42,7 @@ _G.client.connect_signal(
   function(c)
     if (c.pid == quake_id) then
       quake_client = c
-      c.opacity = 0.9
+      c.opacity = 1
       c.floating = true
       c.skip_taskbar = true
       c.ontop = true
