@@ -47,7 +47,14 @@ local clientKeys =
       c:swap(awful.client.getmaster())
     end,
     {description = 'set client as master', group = 'client'}
+  ),
+  awful.key(
+    { modkey, "Control" },
+    "s",
+    function(c)
+      c:move_to_screen()
+    end,
+    { description = "move to screen", group = "client" })
   )
-)
 
 return clientKeys

@@ -14,13 +14,13 @@ local globalKeys =
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
 
   -- Tag browsing
-  awful.key({modkey}, 'j', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({modkey}, 'k', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  --awful.key({modkey}, 'j', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  --awful.key({modkey}, 'k', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   --awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
 
   -- Default client focus
   awful.key({modkey},
-          'w',
+          'k',
           function()
               awful.client.focus.global_bydirection("up")
               if client.focus then client.focus:raise() end
@@ -30,7 +30,7 @@ local globalKeys =
   ),
 
   awful.key({modkey},
-          's',
+          'j',
           function()
               awful.client.focus.global_bydirection("down")
               if client.focus then client.focus:raise() end
@@ -40,7 +40,7 @@ local globalKeys =
 
   awful.key(
           {modkey},
-          'a',
+          'h',
           function()
               awful.client.focus.global_bydirection("left")
               if client.focus then client.focus:raise() end
@@ -50,7 +50,7 @@ local globalKeys =
 
   awful.key(
           {modkey},
-          'd',
+          'l',
           function()
               awful.client.focus.global_bydirection("right")
               if client.focus then
@@ -82,10 +82,10 @@ local globalKeys =
     end,
     {description = 'show windows', group = 'launcher'}
   ),
-  awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
+  --awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
     {modkey},
-    'Tab',
+    's',
     function()
       awful.screen.focus_relative(1)
     end,
