@@ -1,30 +1,31 @@
 local awful = require('awful')
 local gears = require('gears')
 local icons = require('theme.icons')
+local apps = require('configuration.apps')
 
 local tags = {
   {
     icon = icons.chrome,
     type = 'chrome',
-    defaultApp = 'google-chrome-stable',
+    defaultApp = apps.default.browser,
     screen = 1
   },
   {
       icon = icons.terminal,
       type = 'terminal',
-      defaultApp = 'alacritty',
+      defaultApp = apps.default.terminal,
       screen = 1
   },
   {
     icon = icons.code,
     type = 'code',
-    defaultApp = 'gnvim',
+    defaultApp = apps.default.editor,
     screen = 1
   },
   {
       icon = icons.folder,
       type = 'files',
-      defaultApp = 'dolphin',
+      defaultApp = apps.default.file_manager,
       screen = 1
   },
   {
