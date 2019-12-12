@@ -68,7 +68,7 @@ awful.screen.connect_for_each_screen(
         {
           icon = tag.icon,
           layout = awful.layout.suit.tile,
-          gap_single_client = false,
+          gap_single_client = true,
           gap = 4,
           screen = s,
           defaultApp = tag.defaultApp,
@@ -84,7 +84,7 @@ _G.tag.connect_signal(
   function(t)
     local currentLayout = awful.tag.getproperty(t, 'layout')
     if (currentLayout == awful.layout.suit.max) then
-      t.gap = 0
+      t.gap = 4
     else
       t.gap = 4
     end

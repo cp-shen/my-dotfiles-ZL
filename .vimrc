@@ -46,6 +46,7 @@ Plug 'ludovicchabant/vim-gutentags'
 "languages
 "Plug 'calviken/vim-gdscript3'
 Plug 'mrk21/yaml-vim'
+Plug 'rust-lang/rust.vim'
 
 "languages syntax
 "Plug 'octol/vim-cpp-enhanced-highlight'
@@ -72,7 +73,7 @@ Plug 'bfrg/vim-cpp-modern'
     " Enable highlighting of named requirements (C++20 library concepts)
     "let g:cpp_named_requirements_highlight = 1
 Plug 'sheerun/vim-polyglot' "language pack to support highlight
-    let g:polyglot_disabled = ['c/c++', 'yaml']
+    let g:polyglot_disabled = ['c/c++', 'yaml', 'rust']
 
 " snippet engine
 Plug 'SirVer/ultisnips'
