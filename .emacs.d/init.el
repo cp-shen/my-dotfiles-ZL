@@ -9,20 +9,28 @@
     (with-current-buffer
         (url-retrieve-synchronously
          "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         ;"file:///home/scp/.emacs.d/straight.el/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(add-to-list 'load-path "~/.emacs.d/evil")
+(straight-use-package 'lsp-mode)
+(straight-use-package 'company)
+(straight-use-package 'company-lsp)
+(straight-use-package 'rust-mode)
+(straight-use-package 'lsp-ui)
+(straight-use-package 'flycheck)
+(straight-use-package 'lsp-treemacs)
+(straight-use-package 'helm-lsp)
+(straight-use-package 'dap-mode)
+(straight-use-package 'helm)
+(straight-use-package 'evil)
+(straight-use-package 'rust-mode)
+(straight-use-package 'atom-one-dark-theme)
+
 (require 'evil)
 (evil-mode 1)
 
-(add-to-list 'load-path "~/.emacs.d/rust-mode")
-(autoload 'rust-mode "rust-mode" nil t)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/atom-one-dark-theme")
 (load-theme 'atom-one-dark t)
 
 (menu-bar-mode -1)
@@ -101,17 +109,6 @@
 (provide 'fira-code-mode)
 
 (fira-code-global-mode 1)
-
-(straight-use-package 'lsp-mode)
-(straight-use-package 'company)
-(straight-use-package 'company-lsp)
-(straight-use-package 'rust-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'flycheck)
-(straight-use-package 'lsp-treemacs)
-(straight-use-package 'helm-lsp)
-(straight-use-package 'dap-mode)
-(straight-use-package 'helm)
 
 ;; (defvar lsp-language-id-configuration
 ;;   '(...
