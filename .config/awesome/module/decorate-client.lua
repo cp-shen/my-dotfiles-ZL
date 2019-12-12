@@ -24,9 +24,9 @@ local function renderClient(client, mode)
     end
   elseif client.rendering_mode == 'tiled' then
     client.border_width = beautiful.border_width
-    client.shape = function(cr, w, h)
-      gears.shape.rounded_rect(cr, w, h, 8)
-    end
+    --client.shape = function(cr, w, h)
+    --  gears.shape.rounded_rect(cr, w, h, 8)
+    --end
   end
 end
 

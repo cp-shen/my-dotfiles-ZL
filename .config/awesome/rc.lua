@@ -5,6 +5,7 @@ local beautiful = require('beautiful')
 
 -- Theme
 beautiful.init(require('theme'))
+beautiful.border_width = 0
 
 -- Layout
 require('layout')
