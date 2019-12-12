@@ -32,7 +32,7 @@ awful.rules.rules = {
   },
   {
     rule = { class = apps.const.termClass },
-    except_any = { name = { apps.const.quakeName } },
+    except_any = { name = { apps.const.quakeName }, class = { apps.const.quakeClass } },
     properties = { tag = "2", switchtotag = true, }
   },
   {
@@ -44,7 +44,7 @@ awful.rules.rules = {
     properties = { tag = "4", switchtotag = true, }
   },
   {
-    rule_any = { name = { apps.const.quakeName } },
+    rule_any = { name = { apps.const.quakeName }, class = { apps.const.quakeClass } },
     properties = { skip_decoration = true },
   },
   -- Titlebars

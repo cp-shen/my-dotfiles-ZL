@@ -6,12 +6,12 @@ local apps =
 {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'alacritty',
+    terminal = 'kitty',
     editor = 'kitty --class=kitty-nvim -- nvim',
     rofi = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show drun -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     rofi_window = 'rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show window -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi',
     --lock = 'i3lock-fancy-rapid 5 3 -k --timecolor=ffffffff --datecolor=ffffffff',
-    quake = 'alacritty --title QuakeTerminal',
+    quake = 'kitty --class QuakeTerminal',
     browser = 'google-chrome-stable',
     file_manager = 'dolphin',
   },
@@ -27,10 +27,11 @@ local apps =
 
   -- used to define rules
   const = {
-    termClass = "Alacritty",
+    termClass = "kitty",
     browserClass = "Google-chrome",
     editorClass = "kitty-nvim",
     quakeName = "QuakeTerminal",
+    quakeClass = "QuakeTerminal",
     fileMangerClass = "dolphin",
     idePattern = "jetbrains",
     vscodePattern = "code"
