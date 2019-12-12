@@ -129,3 +129,4 @@
 (setq lsp-eldoc-render-all t)
 (setq lsp-rust-show-hover-context t)
 
+(add-hook 'after-init-hook #'global-flycheck-mode)
