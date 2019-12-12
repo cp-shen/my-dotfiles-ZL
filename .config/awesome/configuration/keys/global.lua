@@ -110,7 +110,7 @@ local globalKeys =
 
           awful.key(
                   { modkey },
-                  'Return',
+                  't',
                   function()
                       awful.spawn(apps.default.terminal)
                   end,
@@ -250,7 +250,7 @@ local globalKeys =
   -- Dropdown application
   awful.key(
     {modkey},
-    '`',
+    'Return',
     function()
       _G.toggle_quake()
     end,

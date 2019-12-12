@@ -14,3 +14,7 @@
 [mergetool "vimdiff"]
     ;cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[http]
+	proxy = socks5://127.0.0.1:7891
+[https]
+	proxy = socks5://127.0.0.1:7891
