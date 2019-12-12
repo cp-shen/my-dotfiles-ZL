@@ -2,7 +2,8 @@ local spawn = require('awful.spawn')
 local app = require('configuration.apps').default.quake
 local apps = require('configuration.apps')
 local quake = require('lain.util.quake')
-local awful        = require("awful")
+local awful = require("awful")
+local naughty = require("naughty")
 
 local quake_instance
 local quake_id = 'notnil' --deprecated
@@ -45,11 +46,11 @@ toggle_quake = function()
   if not quake_instance then
     local conf = { }
     conf.app        = conf.app       or apps.default.terminal    -- application to spawn
-    conf.name       = conf.name      or apps.const.quakeName  -- window name
-    conf.argname    = conf.argname   or "--name %s" -- how to specify window name
+    conf.name       = conf.name      or apps.const.quakeClass  -- window name
+    conf.argname    = conf.argname   or "--class %s" -- how to specify window name
     conf.extra      = conf.extra     or ""         -- extra arguments
     conf.border     = conf.border    or 0          -- client border width
-    conf.visible    = conf.visible   or true      -- initially not visible
+    conf.visible    = conf.visible   or false      -- initially not visible
     conf.followtag  = conf.followtag or false      -- spawn on currently focused screen
     conf.overlap    = conf.overlap   or false      -- overlap wibox
     conf.screen     = conf.screen    or awful.screen.focused()
@@ -60,7 +61,14 @@ toggle_quake = function()
     conf.width      = conf.width     or 1          -- width
     conf.vert       = conf.vert      or "top"      -- top, bottom or center
     conf.horiz      = conf.horiz     or "left"     -- left, right or center
+
+    local cmd = string.format("%s %s %s", conf.app,
+            string.format(conf.argname, conf.name), conf.extra)
+    awful.spawn(cmd, { skip_decoration = true })
+
     quake_instance = quake(conf)
+    quake_instance:display()
+
   end
 
   quake_instance:toggle()
