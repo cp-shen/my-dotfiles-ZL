@@ -28,6 +28,7 @@ local apps =
   -- used to define rules
   const = {
     termClass = "kitty",
+    emacsClass = "Emacs",
     browserClass = "Google-chrome",
     editorClass = "kitty-nvim",
     quakeName = "QuakeTerminal",
