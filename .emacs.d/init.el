@@ -130,3 +130,9 @@
 (setq lsp-rust-show-hover-context t)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'lsp-ui)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(add-hook 'lsp-mode-hook 'flycheck-mode)
+
+(setq lsp-prefer-flymake nil)
