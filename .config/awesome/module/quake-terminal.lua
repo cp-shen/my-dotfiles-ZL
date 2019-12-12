@@ -55,20 +55,13 @@ toggle_quake = function()
     conf.overlap    = conf.overlap   or false      -- overlap wibox
     conf.screen     = conf.screen    or awful.screen.focused()
     conf.settings   = conf.settings
-
     -- If width or height <= 1 this is a proportion of the workspace
     conf.height     = conf.height    or 0.5       -- height
     conf.width      = conf.width     or 1          -- width
     conf.vert       = conf.vert      or "top"      -- top, bottom or center
     conf.horiz      = conf.horiz     or "left"     -- left, right or center
 
-    local cmd = string.format("%s %s %s", conf.app,
-            string.format(conf.argname, conf.name), conf.extra)
-    awful.spawn(cmd, { skip_decoration = true })
-
     quake_instance = quake(conf)
-    quake_instance:display()
-
   end
 
   quake_instance:toggle()
