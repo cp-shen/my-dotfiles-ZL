@@ -136,7 +136,7 @@ local globalKeys =
                   { modkey },
                   'e',
                   function()
-                      awful.spawn(apps.default.file_manager)
+                      awful.spawn('emacs')
                   end,
                   { description = 'open file manager', group = 'launcher' }
           ),

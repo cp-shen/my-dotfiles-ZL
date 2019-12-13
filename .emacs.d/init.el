@@ -38,7 +38,7 @@
 (tool-bar-mode -1)
 
 (recentf-mode 1)
-(display-line-numbers-mode 1)
+(global-display-line-numbers-mode 1)
 
 (set-face-attribute 'default nil
                     :family "Fira Code"
