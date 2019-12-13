@@ -33,7 +33,8 @@
 (straight-use-package 'atom-one-dark-theme)
 (straight-use-package 'use-package)
 (straight-use-package
-  '(leetcode :type git :host github :repo "cp-shen/leetcode.el"))
+ '(leetcode :type git :host github :repo "kaiwk/leetcode.el")
+ :fork '(:host github :repo "cp-shen/leetcode.el"))
 
 (require 'leetcode)
 (setq leetcode-prefer-language "cpp")
