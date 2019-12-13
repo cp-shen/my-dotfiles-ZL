@@ -1,3 +1,7 @@
+;; (setq socks-noproxy '("127.0.0.1"))
+;; (setq socks-server '("Default server" "127.0.0.1" 7891 5))
+;; (setq url-gateway-method 'socks)
+
 (with-eval-after-load 'gnutls
   (add-to-list 'gnutls-trustfiles "/etc/libressl/cert.pem"))
 
@@ -27,6 +31,13 @@
 (straight-use-package 'evil)
 (straight-use-package 'rust-mode)
 (straight-use-package 'atom-one-dark-theme)
+(straight-use-package 'use-package)
+(straight-use-package
+  '(leetcode :type git :host github :repo "cp-shen/leetcode.el"))
+
+(require 'leetcode)
+(setq leetcode-prefer-language "cpp")
+(setq leetcode-prefer-sql "mysql")
 
 (require 'evil)
 (evil-mode 1)
@@ -38,7 +49,7 @@
 (tool-bar-mode -1)
 
 (recentf-mode 1)
-(global-display-line-numbers-mode 1)
+;; (global-display-line-numbers-mode 1)
 
 (set-face-attribute 'default nil
                     :family "Fira Code"
@@ -129,7 +140,7 @@
 (setq lsp-eldoc-render-all t)
 (setq lsp-rust-show-hover-context t)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'lsp-ui)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
