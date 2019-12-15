@@ -18,6 +18,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'use-package)
+
 (straight-use-package 'lsp-mode)
 (straight-use-package 'company)
 (straight-use-package 'company-lsp)
@@ -31,10 +33,16 @@
 (straight-use-package 'evil)
 (straight-use-package 'rust-mode)
 (straight-use-package 'atom-one-dark-theme)
-(straight-use-package 'use-package)
+(straight-use-package 'monokai-theme)
+
 (straight-use-package
  '(leetcode :type git :host github :repo "kaiwk/leetcode.el"
  :fork '(:host github :repo "cp-shen/leetcode.el")))
+
+(require 'use-package)
+(use-package ranger
+  :straight t
+  :config (ranger-override-dired-mode t))
 
 (require 'leetcode)
 (setq leetcode-prefer-language "cpp")
@@ -44,6 +52,8 @@
 (evil-mode 1)
 
 (load-theme 'atom-one-dark t)
+;; (load-theme 'monokai t)
+
 
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
