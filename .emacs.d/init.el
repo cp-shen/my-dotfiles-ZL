@@ -136,6 +136,8 @@
 
 (use-package parens :straight nil)
 
+(use-package keys :straight nil)
+
 ;;;;;;;;;;;;;;;;;;;;
 ;; theme packages ;;
 ;;;;;;;;;;;;;;;;;;;;
@@ -177,7 +179,7 @@
 ;; startup settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(setq initial-buffer-choice 'recentf-open-files)
+(setq initial-buffer-choice 'helm-recentf)
 
 (provide 'init)
 ;;; init.el ends here
