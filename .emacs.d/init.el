@@ -123,7 +123,7 @@
 
 (use-package evil-vimish-fold
   :straight t
-  :after (vimish-fold)
+  :after (vimish-fold evil)
   :config (evil-vimish-fold-mode 1 )
   )
 
