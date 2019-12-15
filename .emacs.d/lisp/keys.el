@@ -24,32 +24,39 @@
 
 ;;; Code:
 
+
 (define-key company-active-map (kbd "C-j") #'company-select-next)
 (define-key company-active-map (kbd "C-k") #'company-select-previous)
 (define-key company-search-map (kbd "C-j") #'company-select-next)
 (define-key company-search-map (kbd "C-k") #'company-select-previous)
 
-
 (use-package helm
   :bind
-  (("C-SPC"   . helm-M-x)
-   ("C-x C-f" . helm-find-files)
-   ("C-x C-b" . helm-buffers-list)
-   ("C-x C-h" . helm-recentf)
-   :map helm-map
+  (:map helm-map
    ("C-j"   . helm-next-line)
    ("C-k"   . helm-previous-line)
    ("C-z"   . helm-select-action)
    ("TAB"   . helm-execute-persistent-action)
-   ("<tab>" . helm-execute-persistent-action))
-)
+   ("<tab>" . helm-execute-persistent-action)
+))
 
 (use-package helm-files
   :bind
   (:map helm-find-files-map
    ("C-h" . helm-find-files-up-one-level)
-   ("C-l" . helm-execute-persistent-action))
-)
+   ("C-l" . helm-execute-persistent-action)
+))
+
+(use-package evil
+  :after (helm)
+  :bind
+  (:map evil-motion-state-map
+   ("SPC" . nil)
+   ("SPC SPC" . helm-M-x)
+   ("SPC C-f" . helm-find-files)
+   ("SPC C-b" . helm-buffers-list)
+   ("SPC C-h" . helm-recentf)
+))
 
 (provide 'keys)
 ;;; keys.el ends here
