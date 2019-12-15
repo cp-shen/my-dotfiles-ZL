@@ -188,6 +188,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;
 
 (setq initial-buffer-choice 'helm-recentf)
+(setq gdb-show-main t)
+(setq gdb-many-windows t)
 
 (provide 'init)
 ;;; init.el ends here
