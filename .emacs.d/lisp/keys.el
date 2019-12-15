@@ -35,7 +35,7 @@
   (("C-SPC"   . helm-M-x)
    ("C-x C-f" . helm-find-files)
    ("C-x C-b" . helm-buffers-list)
-   ("C-x C-f" . helm-recentf)
+   ("C-x C-h" . helm-recentf)
    :map helm-map
    ("C-j"   . helm-next-line)
    ("C-k"   . helm-previous-line)
