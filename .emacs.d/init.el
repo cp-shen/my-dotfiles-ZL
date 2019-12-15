@@ -61,14 +61,29 @@
 ;; import packages and configure them ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package company :straight t)
-(use-package lsp-treemacs :straight t)
-(use-package company-lsp :straight t)
+(use-package company
+  :straight t
+  :init (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package lsp-treemacs
+  :straight t
+  :after (lsp-mode))
+
 (use-package rust-mode :straight t)
-(use-package helm-lsp :straight t :config (helm-mode 1))
-(use-package dap-mode :straight t)
+
 (use-package helm :straight t)
-(use-package rust-mode :straight t)
+
+(use-package company-lsp
+  :straight t
+  :after (lsp-mode company))
+
+(use-package helm-lsp
+  :straight t
+  :config (helm-mode 1)
+  :after (helm lsp-mode))
+
+(use-package dap-mode :straight t)
+
 (use-package magit :straight t)
 
 (use-package flycheck
