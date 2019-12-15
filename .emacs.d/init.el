@@ -119,6 +119,14 @@
   :init (progn (add-hook 'lsp-mode-hook #'lsp-ui-mode)
 	       (add-hook 'lsp-mode-hook #'flycheck-mode)))
 
+(use-package vimish-fold :straight t)
+
+(use-package evil-vimish-fold
+  :straight t
+  :after (vimish-fold)
+  :config (evil-vimish-fold-mode 1 )
+  )
+
 ;;;;;;;;;;;;;;;;;;;;
 ;; local packages ;;
 ;;;;;;;;;;;;;;;;;;;;

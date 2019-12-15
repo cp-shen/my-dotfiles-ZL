@@ -24,7 +24,6 @@
 
 ;;; Code:
 
-
 (define-key company-active-map (kbd "C-j") #'company-select-next)
 (define-key company-active-map (kbd "C-k") #'company-select-previous)
 (define-key company-search-map (kbd "C-j") #'company-select-next)
