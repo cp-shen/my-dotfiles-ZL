@@ -1,9 +1,45 @@
+;;; init.el ---                                      -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2019  cp_shen
+
+;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
+;; Keywords:
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; 
+
+;;; Code:
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; socks5 proxy settings ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; (setq socks-noproxy '("127.0.0.1"))
 ;; (setq socks-server '("Default server" "127.0.0.1" 7891 5))
 ;; (setq url-gateway-method 'socks)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; install straight.el and use-package ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (with-eval-after-load 'gnutls
   (add-to-list 'gnutls-trustfiles "/etc/libressl/cert.pem"))
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -19,159 +55,114 @@
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-
-(straight-use-package 'lsp-mode)
-(straight-use-package 'company)
-(straight-use-package 'company-lsp)
-(straight-use-package 'rust-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'flycheck)
-(straight-use-package 'lsp-treemacs)
-(straight-use-package 'helm-lsp)
-(straight-use-package 'dap-mode)
-(straight-use-package 'helm)
-(straight-use-package 'evil)
-(straight-use-package 'rust-mode)
-(straight-use-package 'atom-one-dark-theme)
-(straight-use-package 'monokai-theme)
-
-(straight-use-package
- '(leetcode :type git :host github :repo "kaiwk/leetcode.el"
- :fork '(:host github :repo "cp-shen/leetcode.el")))
-
 (require 'use-package)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; import packages and configure them ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package company :straight t)
+(use-package lsp-treemacs :straight t)
+(use-package company-lsp :straight t)
+(use-package rust-mode :straight t)
+(use-package helm-lsp :straight t :config (helm-mode 1))
+(use-package dap-mode :straight t)
+(use-package helm :straight t)
+(use-package rust-mode :straight t)
+(use-package magit :straight t)
+
+(use-package flycheck
+  :straight t
+  :init (add-hook 'after-init-hook #'global-flycheck-mode))
+
 (use-package ranger
   :straight t
   :config (ranger-override-dired-mode t))
 
-(require 'leetcode)
-(setq leetcode-prefer-language "cpp")
-(setq leetcode-prefer-sql "mysql")
+(use-package leetcode
+  :straight (leetcode :type git
+		      :host github
+		      :repo "kaiwk/leetcode.el"
+		      :fork (:host github :repo "cp-shen/leetcode.el"))
+  :config (progn (setq leetcode-prefer-language "cpp")
+		 (setq leetcode-prefer-sql "mysql")))
 
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :straight t
+  :config (evil-mode t))
 
-(load-theme 'atom-one-dark t)
-;; (load-theme 'monokai t)
+(use-package lsp-mode
+  :straight t
+  :init (add-hook 'rust-mode-hook #'lsp)
+  :config (progn (setq lsp-enable-snippet nil)
+		 (setq lsp-eldoc-render-all t)
+		 (setq lsp-rust-show-hover-context t)
+		 (setq lsp-prefer-flymake nil)))
 
+(use-package lsp-ui
+  :straight t
+  :init (progn (add-hook 'lsp-mode-hook #'lsp-ui-mode)
+	       (add-hook 'lsp-mode-hook #'flycheck-mode)))
+
+;;;;;;;;;;;;;;;;;;;;
+;; local packages ;;
+;;;;;;;;;;;;;;;;;;;;
+
+(use-package fira-code
+  :straight nil
+  :config (progn (set-face-attribute 'default nil
+                    :family "Fira Code"
+                    :height 115
+                    :weight 'normal
+                    :width 'normal)
+		 (fira-code-global-mode 1)))
+
+(use-package indent :straight nil)
+
+(use-package parens :straight nil)
+
+;;;;;;;;;;;;;;;;;;;;
+;; theme packages ;;
+;;;;;;;;;;;;;;;;;;;;
+
+(use-package atom-one-dark-theme
+  :straight t
+  :config (load-theme 'atom-one-dark t))
+
+;; (use-package zenburn-theme
+;;  :straight t
+;;  :config (progn (load-theme 'zerodark t)
+;;                 (zerodark-setup-modeline-format)))
+
+;; (use-package monokai-theme :straight t)
+;; (use-package zerodark-theme :straight t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; other appearance settins ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; other misc settins ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 (recentf-mode 1)
-;; (global-display-line-numbers-mode 1)
+(global-hl-line-mode 1)
 
-(set-face-attribute 'default nil
-                    :family "Fira Code"
-                    :height 110
-                    :weight 'normal
-                    :width 'normal)
+(add-hook 'emacs-lisp-mode-hook (lambda () (flycheck-mode -1)))
 
-(defun fira-code-mode--make-alist (list)
-  "Generate prettify-symbols alist from LIST."
-  (let ((idx -1))
-    (mapcar
-     (lambda (s)
-       (setq idx (1+ idx))
-       (let* ((code (+ #Xe100 idx))
-          (width (string-width s))
-          (prefix ())
-          (suffix '(?\s (Br . Br)))
-          (n 1))
-     (while (< n width)
-       (setq prefix (append prefix '(?\s (Br . Bl))))
-       (setq n (1+ n)))
-     (cons s (append prefix suffix (list (decode-char 'ucs code))))))
-     list)))
+(add-hook 'emacs-lisp-mode-hook (lambda () (display-line-numbers-mode 1)))
+(add-hook 'c-mode-common-hook   (lambda () (display-line-numbers-mode 1)))
+(add-hook 'rust-mode-hook       (lambda () (display-line-numbers-mode 1)))
 
-(defconst fira-code-mode--ligatures
-  '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
-    "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
-    "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
-    "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
-    ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
-    "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
-    "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
-    "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
-    ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
-    "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
-    "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
-    "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
-    "x" ":" "+" "+" "*"))
+;;;;;;;;;;;;;;;;;;;;;;
+;; startup settings ;;
+;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar fira-code-mode--old-prettify-alist)
+(setq initial-buffer-choice 'recentf-open-files)
 
-(defun fira-code-mode--enable ()
-  "Enable Fira Code ligatures in current buffer."
-  (setq-local fira-code-mode--old-prettify-alist prettify-symbols-alist)
-  (setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist))
-  (prettify-symbols-mode t))
-
-(defun fira-code-mode--disable ()
-  "Disable Fira Code ligatures in current buffer."
-  (setq-local prettify-symbols-alist fira-code-mode--old-prettify-alist)
-  (prettify-symbols-mode -1))
-
-(define-minor-mode fira-code-mode
-  "Fira Code ligatures minor mode"
-  :lighter " Fira Code"
-  (setq-local prettify-symbols-unprettify-at-point 'right-edge)
-  (if fira-code-mode
-      (fira-code-mode--enable)
-    (fira-code-mode--disable)))
-
-(define-globalized-minor-mode fira-code-global-mode fira-code-mode
-  (lambda () (fira-code-mode 1)))
-
-(defun fira-code-mode--setup ()
-  "Setup Fira Code Symbols"
-  (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
-
-(provide 'fira-code-mode)
-
-(fira-code-global-mode 1)
-
-;; (defvar lsp-language-id-configuration
-;;   '(...
-;;    (rust-mode . "rust")
-;;    ...))
-;; if you are adding the support for your language server in separate repo use
-;; (add-to-list 'lsp-language-id-configuration '(python-mode . "python"))
-
-;; (lsp-register-client
-;;  (make-lsp-client :new-connection (lsp-stdio-connection "rls")
-;;                   :major-modes '(rust-mode)
-;;                   :server-id 'rls))
-
-(require 'lsp-mode)
-(add-hook 'rust-mode-hook #'lsp)
-
-(setq lsp-enable-snippet nil)
-(setq lsp-eldoc-render-all t)
-(setq lsp-rust-show-hover-context t)
-
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
-
-(require 'lsp-ui)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(add-hook 'lsp-mode-hook 'flycheck-mode)
-
-(setq lsp-prefer-flymake nil)
-
-(defun my-c-mode-common-hook ()
- ;; my customizations for all of c-mode, c++-mode, objc-mode, java-mode
- (c-set-offset 'substatement-open 0)
- ;; other customizations can go here
-
- (setq c++-tab-always-indent t)
- (setq c-basic-offset 4)                  ;; Default is 2
- (setq c-indent-level 4)                  ;; Default is 2
-
- (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
- (setq tab-width 4)
- (setq indent-tabs-mode nil)
- (setq c-default-style "linux")
- )
-
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(provide 'init)
+;;; init.el ends here
