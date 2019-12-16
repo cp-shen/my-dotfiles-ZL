@@ -104,7 +104,9 @@
 
 (use-package evil
   :straight t
-  :config (evil-mode t))
+  :config (progn (setq evil-want-C-u-scroll t)
+		 (evil-mode t))
+  :init (progn (setq evil-want-C-u-scroll t)))
 
 (use-package lsp-mode
   :straight t
@@ -126,6 +128,8 @@
   :after (vimish-fold evil)
   :config (evil-vimish-fold-mode 1 )
   )
+
+(use-package ivy :straight t)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; local packages ;;

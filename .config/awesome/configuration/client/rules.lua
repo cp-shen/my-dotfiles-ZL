@@ -31,12 +31,12 @@ awful.rules.rules = {
     properties = { tag = "1", switchtotag = true, }
   },
   {
-    rule = { class = apps.const.termClass },
-    except_any = { name = { apps.const.quakeName }, class = { apps.const.quakeClass } },
+    rule_any = { class = { apps.const.editorClass, apps.const.idePattern, apps.const.emacsClass, "code" } },
     properties = { tag = "2", switchtotag = true, }
   },
   {
-    rule_any = { class = { apps.const.editorClass, apps.const.idePattern, apps.const.emacsClass, "code" } },
+    rule = { class = apps.const.termClass },
+    except_any = { name = { apps.const.quakeName }, class = { apps.const.quakeClass, apps.const.editorClass} },
     properties = { tag = "3", switchtotag = true, }
   },
   {

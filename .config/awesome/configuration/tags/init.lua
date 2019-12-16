@@ -11,16 +11,16 @@ local tags = {
     screen = 1
   },
   {
-      icon = icons.terminal,
-      type = 'terminal',
-      defaultApp = apps.default.terminal,
-      screen = 1
-  },
-  {
     icon = icons.code,
     type = 'code',
     defaultApp = apps.default.editor,
     screen = 1
+  },
+  {
+      icon = icons.terminal,
+      type = 'terminal',
+      defaultApp = apps.default.terminal,
+      screen = 1
   },
   {
       icon = icons.folder,
