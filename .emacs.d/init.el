@@ -159,22 +159,7 @@
 (use-package module-indent )
 (use-package module-pairs  )
 (use-package module-keys   )
-
-;;;;;;;;;;;;;;;;;;;;
-;; theme packages ;;
-;;;;;;;;;;;;;;;;;;;;
-
-(use-package atom-one-dark-theme
-  :straight t
-  :config (load-theme 'atom-one-dark t))
-
-;; (use-package zenburn-theme
-;;  :straight t
-;;  :config (progn (load-theme 'zerodark t)
-;;                 (zerodark-setup-modeline-format)))
-
-;; (use-package monokai-theme :straight t)
-;; (use-package zerodark-theme :straight t)
+(use-package module-theme )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; other appearance settins ;;
