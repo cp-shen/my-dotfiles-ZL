@@ -155,20 +155,10 @@
 ;; local packages ;;
 ;;;;;;;;;;;;;;;;;;;;
 
-(use-package fira-code
-  :straight nil
-  :config (progn (set-face-attribute 'default nil
-                    :family "Fira Code"
-                    :height 115
-                    :weight 'normal
-                    :width 'normal)
-		 (fira-code-global-mode 1)))
-
-(use-package indent :straight nil)
-
-(use-package parens :straight nil)
-
-(use-package keys :straight nil)
+(use-package module-font   )
+(use-package module-indent )
+(use-package module-pairs  )
+(use-package module-keys   )
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; theme packages ;;
@@ -201,7 +191,7 @@
 (recentf-mode 1)
 (global-hl-line-mode 1)
 
-(add-hook 'emacs-lisp-mode-hook (lambda () (flycheck-mode -1)))
+;; (add-hook 'emacs-lisp-mode-hook (lambda () (flycheck-mode -1)))
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (display-line-numbers-mode 1)))
 (add-hook 'c-mode-common-hook   (lambda () (display-line-numbers-mode 1)))

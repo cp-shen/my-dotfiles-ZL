@@ -1,8 +1,8 @@
-;;; fira-code.el ---                                 -*- lexical-binding: t; -*-
+;;; module-font.el ---                               -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  cp_shen
+;; Copyright (C) 2019  scp
 
-;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
+;; Author: scp <scp@scp-pc>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,6 @@
 ;; 
 
 ;;; Code:
-
 
 (defun fira-code-mode--make-alist (list)
   "Generate prettify-symbols alist from LIST."
@@ -85,5 +84,13 @@
   "Setup Fira Code Symbols."
   (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
 
-(provide 'fira-code)
-;;; fira-code.el ends here
+(set-face-attribute 'default nil
+                    :family "Fira Code"
+                    :height 115
+                    :weight 'normal
+                    :width 'normal)
+
+(fira-code-global-mode 1)
+
+(provide 'module-font)
+;;; module-font.el ends here

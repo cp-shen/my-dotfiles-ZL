@@ -1,9 +1,9 @@
-;;; keys.el ---                                      -*- lexical-binding: t; -*-
+;;; module-keys.el ---                                      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  cp_shen
 
 ;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
-;; Keywords: 
+;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -48,5 +48,5 @@
 (define-key company-search-map (kbd "C-n") #'company-select-next)
 (define-key company-search-map (kbd "C-p") #'company-select-previous)
 
-(provide 'keys)
-;;; keys.el ends here
+(provide 'module-keys)
+;;; module-keys.el ends here

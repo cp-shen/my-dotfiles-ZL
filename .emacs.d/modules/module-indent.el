@@ -1,9 +1,9 @@
-;;; indent.el ---                                    -*- lexical-binding: t; -*-
+;;; module-indent.el ---                                    -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  cp_shen
 
 ;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
-;; Keywords: 
+;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,5 +41,5 @@
 
 (setq-default indent-tabs-mode nil)
 
-(provide 'indent)
-;;; indent.el ends here
+(provide 'module-indent)
+;;; module-indent.el ends here
