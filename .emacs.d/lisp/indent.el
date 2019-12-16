@@ -34,11 +34,12 @@
 
  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
  (setq tab-width 4)
- (setq indent-tabs-mode nil)
  (setq c-default-style "linux")
  )
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(setq indent-tabs-mode nil)
 
 (provide 'indent)
 ;;; indent.el ends here

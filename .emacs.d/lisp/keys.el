@@ -24,31 +24,28 @@
 
 ;;; Code:
 
+(defun switch-to-last-buffer ()
+  (interactive)
+  (switch-to-buffer nil))
+
+(global-set-key (kbd "C-l") nil)
+(global-set-key (kbd "C-s") nil)
+
+(global-set-key (kbd "C-l C-/") #'comment-line)
+(global-set-key (kbd "C-l C-x") #'counsel-M-x)
+(global-set-key (kbd "C-l C-f") #'counsel-find-file)
+(global-set-key (kbd "C-l C-h") #'counsel-recentf)
+
+(global-set-key (kbd "C-l C-b") #'ivy-switch-buffer)
+(global-set-key (kbd "C-l <C-tab>") #'switch-to-last-buffer)
+(global-set-key (kbd "C-l C-s") #'swiper-isearch)
+
+(define-key key-translation-map (kbd "<C-return>") (kbd "RET"))
+
 (define-key company-active-map (kbd "C-n") #'company-select-next)
 (define-key company-active-map (kbd "C-p") #'company-select-previous)
 (define-key company-search-map (kbd "C-n") #'company-select-next)
 (define-key company-search-map (kbd "C-p") #'company-select-previous)
-
-(use-package evil
-  :bind
-  (:map evil-motion-state-map
-   ("SPC" . nil)
-   ;; ("SPC SPC" . helm-M-x)
-   ;; ("SPC C-f" . helm-find-files)
-   ;; ("SPC C-b" . helm-buffers-list)
-   ;; ("SPC C-h" . helm-recentf)
-))
-
-;; (use-package helm
-;;   :config (helm-mode 1)
-;;   :bind
-;;   (:map helm-map
-;;    ("C-n"   . helm-next-line)
-;;    ("C-p"   . helm-previous-line)
-;;    ("C-z"   . helm-select-action)
-;;    ("TAB"   . helm-execute-persistent-action)
-;;    ("<tab>" . helm-execute-persistent-action)
-;; ))
 
 (provide 'keys)
 ;;; keys.el ends here
