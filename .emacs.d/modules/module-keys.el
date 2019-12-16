@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(require 'company)
+
 (defun switch-to-last-buffer ()
   (interactive)
   (switch-to-buffer nil))

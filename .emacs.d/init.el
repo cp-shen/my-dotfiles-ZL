@@ -148,47 +148,21 @@
 		 (setq enable-recursive-minibuffers t)))
 
 (use-package counsel :straight t)
-
 (use-package swiper :straight t)
 
-;;;;;;;;;;;;;;;;;;;;
-;; local packages ;;
-;;;;;;;;;;;;;;;;;;;;
-
-(use-package module-font   )
-(use-package module-indent )
-(use-package module-pairs  )
-(use-package module-keys   )
-(use-package module-theme )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; other appearance settins ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;
-;; other misc settins ;;
+;; load local modules ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-(recentf-mode 1)
-(global-hl-line-mode 1)
+(mapc (lambda (name)
+        (require (intern (file-name-sans-extension name))))
+      (directory-files "~/.emacs.d/modules" nil "\\.el$"))
+
 
 ;; (add-hook 'emacs-lisp-mode-hook (lambda () (flycheck-mode -1)))
-
 (add-hook 'emacs-lisp-mode-hook (lambda () (display-line-numbers-mode 1)))
 (add-hook 'c-mode-common-hook   (lambda () (display-line-numbers-mode 1)))
 (add-hook 'rust-mode-hook       (lambda () (display-line-numbers-mode 1)))
-
-;;;;;;;;;;;;;;;;;;;;;;
-;; startup settings ;;
-;;;;;;;;;;;;;;;;;;;;;;
-
-(setq initial-buffer-choice 'counsel-recentf)
-(setq gdb-show-main t)
-(setq gdb-many-windows t)
 
 (provide 'init)
 ;;; init.el ends here
