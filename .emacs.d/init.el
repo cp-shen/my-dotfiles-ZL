@@ -39,8 +39,6 @@
 (with-eval-after-load 'gnutls
   (add-to-list 'gnutls-trustfiles "/etc/libressl/cert.pem"))
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
-
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -56,6 +54,12 @@
 
 (straight-use-package 'use-package)
 (require 'use-package)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; add modules to load-path ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'load-path "~/.emacs.d/modules")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; import packages and configure them ;;
