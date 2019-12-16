@@ -33,6 +33,7 @@
 (global-set-key (kbd "C-k <C-tab>") #'switch-to-last-buffer)
 
 (global-set-key (kbd "C-k C-/") #'comment-line)
+(global-set-key (kbd "C-j") #'newline-and-indent)
 (define-key key-translation-map (kbd "<C-return>") (kbd "RET"))
 
 (require 'module-commandcompletion)
@@ -53,6 +54,13 @@
 (define-key lsp-mode-map (kbd "C-l C-u") #'lsp-find-references)
 (define-key lsp-mode-map (kbd "C-l C-f") #'lsp-format-buffer)
 (define-key lsp-mode-map (kbd "C-l C-r") #'lsp-rename)
+
+(require 'module-evil)
+(define-key evil-insert-state-map (kbd "C-k") nil)
+(define-key evil-motion-state-map (kbd "C-w C-h") #'evil-window-left)
+(define-key evil-motion-state-map (kbd "C-w C-j") #'evil-window-down)
+(define-key evil-motion-state-map (kbd "C-w C-k") #'evil-window-up)
+(define-key evil-motion-state-map (kbd "C-w C-l") #'evil-window-right)
 
 (provide 'module-keys)
 ;;; module-keys.el ends here
