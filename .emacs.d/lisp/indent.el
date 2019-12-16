@@ -39,7 +39,7 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 (provide 'indent)
 ;;; indent.el ends here
