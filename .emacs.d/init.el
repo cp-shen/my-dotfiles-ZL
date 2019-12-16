@@ -71,16 +71,9 @@
 
 (use-package rust-mode :straight t)
 
-(use-package helm :straight t)
-
 (use-package company-lsp
   :straight t
   :after (lsp-mode company))
-
-(use-package helm-lsp
-  :straight t
-  :config (helm-mode 1)
-  :after (helm lsp-mode))
 
 (use-package dap-mode :straight t)
 
@@ -126,10 +119,18 @@
 (use-package evil-vimish-fold
   :straight t
   :after (vimish-fold evil)
-  :config (evil-vimish-fold-mode 1 )
-  )
+  :config (evil-vimish-fold-mode 1))
 
-(use-package ivy :straight t)
+(use-package ivy
+  :straight t
+  :config (progn (ivy-mode 1)
+		 (setq ivy-count-format "(%d/%d) ")
+		 (setq ivy-use-virtual-buffers t)
+		 (setq enable-recursive-minibuffers t)))
+
+(use-package counsel :straight t)
+
+(use-package swiper :straight t)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; local packages ;;
@@ -191,7 +192,7 @@
 ;; startup settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(setq initial-buffer-choice 'helm-recentf)
+(setq initial-buffer-choice 'counsel-recentf)
 (setq gdb-show-main t)
 (setq gdb-many-windows t)
 
