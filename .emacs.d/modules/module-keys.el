@@ -24,7 +24,8 @@
 
 ;;; Code:
 
-(require 'company)
+(require 'module-codecompletion)
+(require 'module-commandcompletion)
 
 (defun switch-to-last-buffer ()
   (interactive)

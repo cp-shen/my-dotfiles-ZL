@@ -29,7 +29,7 @@
 ;;;;;;;;;;;;;;
 
 (require 'use-package)
-(require 'counsel)
+(require 'module-commandcompletion)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; common appearance settins ;;
@@ -49,6 +49,14 @@
 (setq initial-buffer-choice 'counsel-recentf)
 (setq gdb-show-main t)
 (setq gdb-many-windows t)
+
+;;;;;;;;;;;
+;; hooks ;;
+;;;;;;;;;;;
+
+(add-hook 'emacs-lisp-mode-hook (lambda () (display-line-numbers-mode 1)))
+(add-hook 'c-mode-common-hook   (lambda () (display-line-numbers-mode 1)))
+(add-hook 'rust-mode-hook       (lambda () (display-line-numbers-mode 1)))
 
 (provide 'module-common)
 ;;; module-common.el ends here

@@ -1,8 +1,8 @@
-;;; module-pairs.el ---                                    -*- lexical-binding: t; -*-
+;;; module-proxy.el ---                              -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  cp_shen
+;; Copyright (C) 2019  scp
 
-;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
+;; Author: scp <scp@scp-pc>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -24,19 +24,16 @@
 
 ;;; Code:
 
-(use-package smartparens
-  :straight t
-  :config (require 'smartparens-config)
-  :init (add-hook 'after-init-hook #'smartparens-global-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; socks5 proxy settings ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package highlight-parentheses :straight t)
+(defun enable-socks5-proxy ()
+  (interactive)
+  (progn
+    (setq socks-noproxy '("127.0.0.1"))
+    (setq socks-server '("Default server" "127.0.0.1" 7891 5))
+    (setq url-gateway-method 'socks)))
 
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-
-(global-highlight-parentheses-mode t)
-
-(provide 'module-pairs)
-;;; module-pairs.el ends here
+(provide 'module-proxy)
+;;; module-proxy.el ends here

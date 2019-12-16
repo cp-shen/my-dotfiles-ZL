@@ -1,8 +1,8 @@
-;;; module-pairs.el ---                                    -*- lexical-binding: t; -*-
+;;; module-evil.el ---                               -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  cp_shen
+;; Copyright (C) 2019  scp
 
-;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
+;; Author: scp <scp@scp-pc>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -24,19 +24,18 @@
 
 ;;; Code:
 
-(use-package smartparens
+(use-package evil
   :straight t
-  :config (require 'smartparens-config)
-  :init (add-hook 'after-init-hook #'smartparens-global-mode))
+  :config (progn (setq evil-want-C-u-scroll t)
+		 (evil-mode t))
+  :init (progn (setq evil-want-C-u-scroll t)))
 
-(use-package highlight-parentheses :straight t)
+(use-package vimish-fold :straight t)
 
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
+(use-package evil-vimish-fold
+  :straight t
+  :after (vimish-fold evil)
+  :config (evil-vimish-fold-mode 1))
 
-(global-highlight-parentheses-mode t)
-
-(provide 'module-pairs)
-;;; module-pairs.el ends here
+(provide 'module-evil)
+;;; module-evil.el ends here

@@ -1,9 +1,9 @@
-;;; module-pairs.el ---                                    -*- lexical-binding: t; -*-
+;;; module-codecompletion.el ---                     -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  cp_shen
+;; Copyright (C) 2019  scp
 
-;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
-;; Keywords:
+;; Author: scp <scp@scp-pc>
+;; Keywords: 
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,19 +24,15 @@
 
 ;;; Code:
 
-(use-package smartparens
+(require 'module-lsp)
+
+(use-package company
   :straight t
-  :config (require 'smartparens-config)
-  :init (add-hook 'after-init-hook #'smartparens-global-mode))
+  :init (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package highlight-parentheses :straight t)
+(use-package company-lsp
+  :straight t
+  :after (lsp-mode company))
 
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-
-(global-highlight-parentheses-mode t)
-
-(provide 'module-pairs)
-;;; module-pairs.el ends here
+(provide 'module-codecompletion)
+;;; module-codecompletion.el ends here

@@ -1,9 +1,9 @@
-;;; module-pairs.el ---                                    -*- lexical-binding: t; -*-
+;;; module-commandcompletion.el ---                  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  cp_shen
+;; Copyright (C) 2019  scp
 
-;; Author: cp_shen <cp_shen@cpshen-Lenovo-ideapad-700-15ISK>
-;; Keywords:
+;; Author: scp <scp@scp-pc>
+;; Keywords: 
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,19 +24,15 @@
 
 ;;; Code:
 
-(use-package smartparens
+(use-package ivy
   :straight t
-  :config (require 'smartparens-config)
-  :init (add-hook 'after-init-hook #'smartparens-global-mode))
+  :config (progn (ivy-mode 1)
+		 (setq ivy-count-format "(%d/%d) ")
+		 (setq ivy-use-virtual-buffers t)
+		 (setq enable-recursive-minibuffers t)))
 
-(use-package highlight-parentheses :straight t)
+(use-package counsel :straight t)
+(use-package swiper :straight t)
 
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-
-(global-highlight-parentheses-mode t)
-
-(provide 'module-pairs)
-;;; module-pairs.el ends here
+(provide 'module-commandcompletion)
+;;; module-commandcompletion.el ends here
