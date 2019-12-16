@@ -30,15 +30,16 @@
 
 (global-set-key (kbd "C-l") nil)
 (global-set-key (kbd "C-s") nil)
+(global-set-key (kbd "C-k") nil)
 
-(global-set-key (kbd "C-l C-/") #'comment-line)
-(global-set-key (kbd "C-l C-x") #'counsel-M-x)
-(global-set-key (kbd "C-l C-f") #'counsel-find-file)
-(global-set-key (kbd "C-l C-h") #'counsel-recentf)
+(global-set-key (kbd "C-k C-/") #'comment-line)
+(global-set-key (kbd "C-k C-x") #'counsel-M-x)
+(global-set-key (kbd "C-k C-f") #'counsel-find-file)
+(global-set-key (kbd "C-k C-h") #'counsel-recentf)
 
-(global-set-key (kbd "C-l C-b") #'ivy-switch-buffer)
-(global-set-key (kbd "C-l <C-tab>") #'switch-to-last-buffer)
-(global-set-key (kbd "C-l C-s") #'swiper-isearch)
+(global-set-key (kbd "C-k C-b") #'ivy-switch-buffer)
+(global-set-key (kbd "C-k <C-tab>") #'switch-to-last-buffer)
+(global-set-key (kbd "C-k C-s") #'swiper-isearch)
 
 (define-key key-translation-map (kbd "<C-return>") (kbd "RET"))
 

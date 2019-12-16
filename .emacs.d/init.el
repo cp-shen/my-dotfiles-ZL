@@ -65,9 +65,28 @@
   :straight t
   :init (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package treemacs
+  :straight t
+  :config ())
+
+(use-package treemacs-evil
+  :after (treemacs evil)
+  :straight t
+  :config ())
+
+(use-package treemacs-magit
+  :after (treemacs)
+  :straight t
+  :config ())
+
+(use-package treemacs-icons-dired
+  :after (treemacs dired)
+  :straight t
+  :config (treemacs-icons-dired-mode 1))
+
 (use-package lsp-treemacs
   :straight t
-  :after (lsp-mode))
+  :after (lsp-mode treemacs))
 
 (use-package rust-mode :straight t)
 
@@ -82,10 +101,6 @@
 (use-package flycheck
   :straight t
   :init (add-hook 'after-init-hook #'global-flycheck-mode))
-
-(use-package ranger
-  :straight t
-  :config (ranger-override-dired-mode t))
 
 (use-package leetcode
   :straight (leetcode :type git
