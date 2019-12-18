@@ -22,16 +22,16 @@ local clientKeys =
     end,
     {description = 'close', group = 'client'}
   ),
-  awful.key(
-    {modkey},
-    'm',
-    function(c)
-        c.maximized = not c.maximized
-        c:raise()
-        client.focus = c
-    end,
-    {description = 'toggle maximized', group = 'client'}
-  ),
+  --awful.key(
+  --  {modkey},
+  --  'm',
+  --  function(c)
+  --      c.maximized = not c.maximized
+  --      c:raise()
+  --      client.focus = c
+  --  end,
+  --  {description = 'toggle maximized', group = 'client'}
+  --),
   awful.key(
     {modkey},
     'n',
@@ -54,7 +54,7 @@ local clientKeys =
     function(c)
       c:move_to_screen()
     end,
-    { description = "move to next screen", group = "client" })
+    { description = "move to next screen", group = "screen" })
   )
 
 return clientKeys

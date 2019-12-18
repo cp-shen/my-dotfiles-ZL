@@ -6,6 +6,8 @@ local hotkeys_popup = require('awful.hotkeys_popup').widget
 local modkey = require('configuration.keys.mod').modKey
 local altkey = require('configuration.keys.mod').altKey
 local apps = require('configuration.apps')
+local lain          = require("lain")
+
 -- Key bindings
 local globalKeys =
   awful.util.table.join(
@@ -61,6 +63,34 @@ local globalKeys =
           { description = 'focus right', group = 'focus' }
   ),
 
+          awful.key(
+                  {modkey},
+                  'Left',
+                  function()
+                      awful.client.focus.byidx(-1)
+                      if client.focus then
+                          client.focus:raise()
+                      end
+                  end,
+                  { description = 'focus previous by index', group = 'focus' }
+          ),
+
+          awful.key(
+                  {modkey},
+                  'Right',
+                  function()
+                      awful.client.focus.byidx(1)
+                      if client.focus then
+                          client.focus:raise()
+                      end
+                  end,
+                  { description = 'focus next by index', group = 'focus' }
+          ),
+
+          awful.key({ modkey }, "Up", function () lain.util.tag_view_nonempty(-1) end,
+                  {description = "view previous nonempty tag", group = "tag"}),
+          awful.key({ modkey }, "Down", function () lain.util.tag_view_nonempty(1) end,
+                  {description = "view next nonempty tag", group = "tag"}),
   awful.key(
     {modkey},
     'a',
@@ -109,12 +139,12 @@ local globalKeys =
   --),
 
           awful.key(
-                  { modkey },
-                  't',
+                  { modkey, "Control" },
+                  'Return',
                   function()
                       awful.spawn(apps.default.terminal)
                   end,
-                  { description = 'open a terminal', group = 'launcher' }
+                  { description = 'open a terminal', group = 'terminal' }
           ),
           awful.key(
                   { modkey },
@@ -138,7 +168,7 @@ local globalKeys =
                   function()
                       awful.spawn('emacs')
                   end,
-                  { description = 'open file manager', group = 'launcher' }
+                  { description = 'open emacs', group = 'launcher' }
           ),
           awful.key(
                   { modkey },
@@ -166,7 +196,10 @@ local globalKeys =
                   {description = "use tile layout", group = "layout"}),
 
           awful.key({ modkey,           }, 'q', function () awful.layout.set(awful.layout.suit.fair) end,
-                  {description = "use quarter layout", group = "layout"}),
+                  {description = "use quarter(fairv) layout", group = "layout"}),
+
+          awful.key({ modkey,           }, 'm', function () awful.layout.set(awful.layout.suit.max) end,
+                  {description = "use max layout", group = "layout"}),
 
   --awful.key(
   --  {altkey, 'Shift'},
@@ -254,7 +287,7 @@ local globalKeys =
     function()
       _G.toggle_quake()
     end,
-    {description = 'dropdown application', group = 'launcher'}
+    {description = 'dropdown terminal', group = 'terminal'}
   ),
 
   -- Widgests popups
@@ -286,7 +319,7 @@ local globalKeys =
     function()
       awful.spawn('xbacklight -inc 10')
     end,
-    {description = '+10%', group = 'hotkeys'}
+    {description = 'brightness up', group = 'hotkeys'}
   ),
   awful.key(
     {},
@@ -294,7 +327,7 @@ local globalKeys =
     function()
       awful.spawn('xbacklight -dec 10')
     end,
-    {description = '-10%', group = 'hotkeys'}
+    {description = 'brightness down', group = 'hotkeys'}
   ),
   -- ALSA volume control
   awful.key(
