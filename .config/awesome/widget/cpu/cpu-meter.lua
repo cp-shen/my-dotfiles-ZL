@@ -9,18 +9,12 @@ local dpi = require('beautiful').xresources.apply_dpi
 local total_prev = 0
 local idle_prev = 0
 
-local slider =
-  wibox.widget {
-  read_only = true,
-  widget = mat_slider
-}
+local slider = wibox.widget{read_only = true, widget = mat_slider}
 
-watch(
-  [[bash -c "cat /proc/stat | grep '^cpu '"]],
-  1,
-  function(_, stdout)
-    local user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice =
-      stdout:match('(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s')
+watch([[bash -c "cat /proc/stat | grep '^cpu '"]], 1, function(_, stdout)
+    local user, nice, system, idle, iowait, irq, softirq, steal, guest,
+          guest_nice = stdout:match(
+                           '(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s(%d+)%s')
 
     local total = user + nice + system + idle + iowait + irq + softirq + steal
 
@@ -33,18 +27,12 @@ watch(
     total_prev = total
     idle_prev = idle
     collectgarbage('collect')
-  end
-)
+end)
 
-local cpu_meter =
-  wibox.widget {
-  wibox.widget {
-    icon = icons.chart,
-    size = dpi(24),
-    widget = mat_icon
-  },
-  slider,
-  widget = mat_list_item
+local cpu_meter = wibox.widget{
+    wibox.widget{icon = icons.chart, size = dpi(24), widget = mat_icon},
+    slider,
+    widget = mat_list_item
 }
 
 return cpu_meter
