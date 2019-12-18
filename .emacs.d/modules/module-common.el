@@ -50,6 +50,8 @@
 (setq gdb-show-main t)
 (setq gdb-many-windows t)
 
+(setq-default truncate-lines t)
+
 ;;;;;;;;;;;
 ;; hooks ;;
 ;;;;;;;;;;;
