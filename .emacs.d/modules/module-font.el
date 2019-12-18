@@ -86,7 +86,7 @@
 
 (set-face-attribute 'default nil
                     :family "Fira Code"
-                    :height 115
+                    :height 120
                     :weight 'normal
                     :width 'normal)
 
