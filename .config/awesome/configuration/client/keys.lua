@@ -3,7 +3,8 @@ require('awful.autofocus')
 local modkey = require('configuration.keys.mod').modKey
 local altkey = require('configuration.keys.mod').altKey
 
-local clientKeys = awful.util.table.join( -- awful.key(
+local clientKeys = awful.util.table.join(
+-- awful.key(
 --  {modkey},
 --  'f',
 --  function(c)
@@ -13,7 +14,8 @@ local clientKeys = awful.util.table.join( -- awful.key(
 --  {description = 'toggle fullscreen', group = 'client'}
 -- ),
 awful.key({modkey}, 'Escape', function(c) c:kill() end,
-          {description = 'close', group = 'client'}), -- awful.key(
+          {description = 'close', group = 'client'}),
+-- awful.key(
 --  {modkey},
 --  'm',
 --  function(c)
