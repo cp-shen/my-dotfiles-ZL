@@ -46,9 +46,9 @@ toggle_quake = function()
         conf.screen = conf.screen or awful.screen.focused()
         conf.settings = conf.settings
         -- If width or height <= 1 this is a proportion of the workspace
-        conf.height = conf.height or 0.5 -- height
+        conf.height = conf.height or 0.4 -- height
         conf.width = conf.width or 1 -- width
-        conf.vert = conf.vert or "top" -- top, bottom or center
+        conf.vert = conf.vert or "bottom" -- top, bottom or center
         conf.horiz = conf.horiz or "left" -- left, right or center
 
         quake_instance = quake(conf)
