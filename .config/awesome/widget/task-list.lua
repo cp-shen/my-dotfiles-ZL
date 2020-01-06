@@ -54,7 +54,7 @@ local function list_update(w, buttons, label, data, objects)
                                                  '/.config/awesome/theme/icons/tag-list/tag/close.png'),
                                          4, 4, 4, 4))
             cb.shape = gears.shape.circle
-            cbm = wibox.container.margin(cb, dpi(4), dpi(8), dpi(12), dpi(12))
+            cbm = wibox.container.margin(cb, dpi(4), dpi(4), dpi(4), dpi(4))
             cbm:buttons(gears.table.join(
                             awful.button({}, 1, nil, function()
                     o.kill(o)
@@ -71,7 +71,7 @@ local function list_update(w, buttons, label, data, objects)
             l:add(ibm)
             l:add(tbm)
             ll:add(l)
-            ll:add(cbm)
+            --ll:add(cbm)
 
             bg_clickable:set_widget(ll)
             -- And all of this gets a background
