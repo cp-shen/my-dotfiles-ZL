@@ -16,7 +16,7 @@ Plug 'vim-scripts/cpp_doxygen'
 Plug 'scrooloose/nerdtree' "file tree
 Plug 'scrooloose/nerdcommenter' "comment tool
 Plug 'terryma/vim-multiple-cursors'
-    let g:multi_cursor_use_default_mapping=0
+    let g:multi_cursor_use_default_mapping = 0
 
     " Default mapping
     let g:multi_cursor_start_word_key      = '<C-n>'
