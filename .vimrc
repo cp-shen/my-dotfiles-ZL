@@ -11,6 +11,10 @@ endif
 call plug#begin(plugdir)
 
 "tools
+Plug 'Shougo/echodoc.vim'
+    set noshowmode
+    let g:echodoc_enable_at_startup = 1
+
 Plug 'vim-scripts/DoxygenToolKit.vim'
 Plug 'vim-scripts/cpp_doxygen'
 Plug 'scrooloose/nerdtree' "file tree
@@ -114,6 +118,8 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         "enable deoplete
         let g:deoplete#enable_at_startup = 1
+
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     "lsp support and completion
     Plug 'autozimu/LanguageClient-neovim', {
