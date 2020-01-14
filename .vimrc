@@ -216,7 +216,7 @@ nnoremap <F2> :echo expand('%:p')<CR>
 nnoremap <Leader>N :NERDTreeToggle<CR>
 
 "toggle lsp context menu
-nnoremap <Leader>L :call LanguageClient_contextMenu()<CR>
+"nnoremap <Leader>L :call LanguageClient_contextMenu()<CR>
 
 "reload file if changed by other program
 nnoremap <Leader>ct :checktime<CR>
@@ -305,8 +305,8 @@ nmap <Leader>D <Plug>cpp_doxygenInsert
 
 nmap <Leader>R :RangerCurrentFile<CR>
 
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <C-b> :call LanguageClient#textDocument_definition()<CR>
+"nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <C-b> :call LanguageClient#textDocument_definition()<CR>
 
 nnoremap <Leader><CR> i<CR><Esc>
 "---------------------------------------------
