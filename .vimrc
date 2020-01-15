@@ -84,8 +84,8 @@ Plug 'itchyny/lightline.vim'
     "let g:rainbow_active = 1
 
 "colorschemes
-Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+Plug 'nanotech/jellybeans.vim'
 
 "for vim-plug help message
 Plug 'junegunn/vim-plug'
@@ -156,7 +156,7 @@ syntax on
 
 "highlight current line
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 "highlight current column
 "set cursorcolumn
@@ -189,16 +189,16 @@ set background=dark
 let g:one_allow_italics = 1
 
 "set lightline theme
-let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ }
 "let g:lightline = {
-  "\ 'colorscheme': 'onedark',
+  "\ 'colorscheme': 'solarized',
   "\ }
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 
 "set color scheme
 colorscheme onedark
-"colorscheme one
+"colorscheme jellybeans
 
 "enable doxygen highlighting
 let g:load_doxygen_syntax = 1
@@ -504,3 +504,5 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 "nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+hi CocErrorSign guifg=#d1666a
