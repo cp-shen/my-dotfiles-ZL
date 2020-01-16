@@ -213,7 +213,7 @@ map <Space> <Leader>
 nnoremap <F2> :echo expand('%:p')<CR>
 
 "bind key to toggle NERDTree
-nnoremap <Leader>N :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 "toggle lsp context menu
 "nnoremap <Leader>L :call LanguageClient_contextMenu()<CR>
@@ -511,4 +511,5 @@ nnoremap <expr><C-j> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-j>"
 nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
 
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>rg :Rg<CR>
 
