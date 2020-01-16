@@ -509,3 +509,6 @@ hi CocErrorSign guifg=#d1666a
 
 nnoremap <expr><C-j> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-j>"
 nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
+
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
