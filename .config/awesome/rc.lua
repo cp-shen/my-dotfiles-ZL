@@ -6,6 +6,8 @@ local beautiful = require('beautiful')
 -- Theme
 beautiful.init(require('theme'))
 beautiful.border_width = 0
+beautiful.hotkeys_font = 'Roboto medium 14'
+beautiful.hotkeys_description_font='Roboto medium 12'
 
 -- Layout
 require('layout')

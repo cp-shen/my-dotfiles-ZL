@@ -79,15 +79,15 @@ awful.key({modkey}, 's', function() awful.screen.focus_relative(1) end,
 --  end
 -- ),
 
-awful.key({modkey, }, 'Return',
+awful.key({modkey, 'Control'}, 'Return',
           function() awful.spawn(apps.default.terminal) end,
           {description = 'open a terminal', group = 'terminal'}),
 awful.key({modkey}, 'w', function() awful.spawn(apps.default.browser) end,
           {description = 'open web browser', group = 'launcher'}),
 awful.key({modkey}, 'v', function() awful.spawn(apps.default.editor) end,
           {description = 'open neovim', group = 'launcher'}),
-awful.key({modkey}, 'e', function() awful.spawn('emacs') end,
-          {description = 'open emacs', group = 'launcher'}),
+awful.key({modkey}, 'e', function() awful.spawn(apps.default.file_manager) end,
+          {description = 'open file explorer', group = 'launcher'}),
 awful.key({modkey}, 'r', function()
     awful.spawn(awful.screen.focused().selected_tag.defaultApp, {
         tag = _G.mouse.screen.selected_tag,
@@ -186,7 +186,7 @@ awful.key({modkey, 'Control'}, 'n', function()
     end
 end, {description = 'restore minimized', group = 'client'}),
 -- Dropdown application
-awful.key({modkey}, 'space', function() _G.toggle_quake() end,
+awful.key({modkey}, 'Return', function() _G.toggle_quake() end,
           {description = 'dropdown terminal', group = 'terminal'}),
 
 -- Widgests popups

@@ -188,14 +188,6 @@ let g:onedark_terminal_italics = 1
 set background=dark
 let g:one_allow_italics = 1
 
-"set lightline theme
-"let g:lightline = {
-  "\ 'colorscheme': 'solarized',
-  "\ }
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
 "set color scheme
 colorscheme onedark
 "colorscheme jellybeans
@@ -513,3 +505,18 @@ nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>rg :Rg<CR>
 
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'clock', 'fileformat', 'fileencoding', 'filetype', ] ]
+      \ },
+      \ 'component_function': {
+      \   'clock': 'ShowCurTime'
+      \ },
+      \ }
+
+function! ShowCurTime()
+    return strftime('%H:%M')
+endfunction
