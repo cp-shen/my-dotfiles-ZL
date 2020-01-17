@@ -253,11 +253,10 @@ nnoremap <Leader>bd :bd<CR>
 "nmap <C-l> <C-w>l
 
 "tab navigation
-nnoremap <A-h> :tabprevious<CR>
-nnoremap <A-l> :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tn :tabnext<CR>
 
 "tab operation
-nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tt :tabnew term://zsh<CR>a
 nnoremap <Leader>td :tabclose<CR>
 
