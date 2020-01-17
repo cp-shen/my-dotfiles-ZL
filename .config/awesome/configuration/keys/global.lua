@@ -79,7 +79,7 @@ awful.key({modkey}, 's', function() awful.screen.focus_relative(1) end,
 --  end
 -- ),
 
-awful.key({modkey, "Control"}, 'Return',
+awful.key({modkey, }, 'Return',
           function() awful.spawn(apps.default.terminal) end,
           {description = 'open a terminal', group = 'terminal'}),
 awful.key({modkey}, 'w', function() awful.spawn(apps.default.browser) end,
@@ -186,7 +186,7 @@ awful.key({modkey, 'Control'}, 'n', function()
     end
 end, {description = 'restore minimized', group = 'client'}),
 -- Dropdown application
-awful.key({modkey}, 'Return', function() _G.toggle_quake() end,
+awful.key({modkey}, 'space', function() _G.toggle_quake() end,
           {description = 'dropdown terminal', group = 'terminal'}),
 
 -- Widgests popups
