@@ -55,7 +55,7 @@ awful.screen.connect_for_each_screen(function(s)
         awful.tag.add(tostring(i), {
             icon = tag.icon,
             layout = tag.layout or awful.layout.suit.tile,
-            gap_single_client = true,
+            gap_single_client = false,
             gap = 4,
             screen = s,
             defaultApp = tag.defaultApp,
