@@ -102,7 +102,7 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
     " available values: 'hard', 'medium'(default), 'soft'
     " let g:gruvbox_material_background = 'soft'
 Plug 'ajh17/Spacegray.vim'
-    let g:spacegray_underline_search = 1
+    "let g:spacegray_underline_search = 1
     let g:spacegray_use_italics = 1
     "let g:spacegray_low_contrast = 1
 Plug 'flrnd/plastic.vim'
@@ -517,7 +517,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Resume latest coc list
 "nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-hi CocErrorSign guifg=#d1666a
+hi CocErrorSign guifg=#AF5F5F
 
 nnoremap <expr><C-j> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-j>"
 nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
@@ -540,3 +540,6 @@ let g:lightline = {
 function! ShowCurTime()
     return strftime('%H:%M')
 endfunction
+
+hi Todo ctermbg=52 ctermfg=12 guibg=NONE guifg=#A57A9E cterm=underline gui=None
+
