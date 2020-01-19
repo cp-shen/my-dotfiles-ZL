@@ -101,10 +101,10 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
     " this configuration option should be placed before `colorscheme gruvbox-material`
     " available values: 'hard', 'medium'(default), 'soft'
     " let g:gruvbox_material_background = 'soft'
-Plug 'ajh17/Spacegray.vim'
-    "let g:spacegray_underline_search = 1
+Plug 'cp-shen/Spacegray.vim'
+    let g:spacegray_underline_search = 0
     let g:spacegray_use_italics = 1
-    "let g:spacegray_low_contrast = 1
+    let g:spacegray_low_contrast = 0
 Plug 'flrnd/plastic.vim'
 
 
@@ -404,8 +404,8 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" always show signcolumns
-set signcolumn=yes
+" always show signcolumn
+set signcolumn=auto
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -542,4 +542,5 @@ function! ShowCurTime()
 endfunction
 
 hi Todo ctermbg=52 ctermfg=12 guibg=NONE guifg=#A57A9E cterm=underline gui=None
+hi SignColumn      ctermbg=233  ctermfg=250    guibg=#111314  guifg=#B3B8C4  cterm=NONE      gui=NONE
 
