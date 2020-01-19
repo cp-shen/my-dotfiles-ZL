@@ -90,6 +90,23 @@ Plug 'itchyny/lightline.vim'
 "colorschemes
 Plug 'joshdick/onedark.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+    " important!!
+    set termguicolors
+    " for dark version
+    set background=dark
+    " for light version
+    "set background=light
+    " set contrast
+    " this configuration option should be placed before `colorscheme gruvbox-material`
+    " available values: 'hard', 'medium'(default), 'soft'
+    " let g:gruvbox_material_background = 'soft'
+Plug 'ajh17/Spacegray.vim'
+    let g:spacegray_underline_search = 1
+    let g:spacegray_use_italics = 1
+    "let g:spacegray_low_contrast = 1
+Plug 'flrnd/plastic.vim'
+
 
 "for vim-plug help message
 Plug 'junegunn/vim-plug'
@@ -159,7 +176,7 @@ set foldcolumn=0
 syntax on
 
 "highlight current line
-set cursorline
+"set cursorline
 "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 "highlight current column
@@ -193,8 +210,8 @@ set background=dark
 let g:one_allow_italics = 1
 
 "set color scheme
-colorscheme onedark
-"colorscheme jellybeans
+colorscheme spacegray
+"colorscheme gruvbox-material
 
 "enable doxygen highlighting
 let g:load_doxygen_syntax = 1
@@ -509,7 +526,7 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>rg :Rg<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'plastic',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
