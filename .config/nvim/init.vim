@@ -105,7 +105,6 @@ Plug 'cp-shen/Spacegray.vim'
     let g:spacegray_underline_search = 0
     let g:spacegray_use_italics = 1
     let g:spacegray_low_contrast = 0
-Plug 'flrnd/plastic.vim'
 
 
 "for vim-plug help message
@@ -526,7 +525,7 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>rg :Rg<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'plastic',
+      \ 'colorscheme': 'spacegray',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
