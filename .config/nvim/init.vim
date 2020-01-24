@@ -225,7 +225,7 @@ map <Space> <Leader>
 nnoremap <F2> :echo expand('%:p')<CR>
 
 "bind key to toggle NERDTree
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <A-1> :NERDTreeToggle<CR>
 
 "toggle lsp context menu
 "nnoremap <Leader>L :call LanguageClient_contextMenu()<CR>
