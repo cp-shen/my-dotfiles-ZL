@@ -239,6 +239,8 @@ nnoremap <Leader>so :so $MYVIMRC<CR>
 "bind keys for deoplete menu navigation
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <A-j> pumvisible() ? "\<C-n>" : "\<A-j>"
+inoremap <expr> <A-k> pumvisible() ? "\<C-p>" : "\<A-k>"
 
 "remap CR for deoplete to close popup menu
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
