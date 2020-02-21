@@ -36,7 +36,7 @@ local apps = {
         editorClass = "kitty-nvim",
         quakeName = "QuakeTerminal",
         quakeClass = "QuakeTerminal",
-        fileMangerClass = "dolphin",
+        fileMangerClass = "Nautilus",
         idePattern = "jetbrains",
         vscodePattern = "code"
     }
