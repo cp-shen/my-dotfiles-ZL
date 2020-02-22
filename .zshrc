@@ -48,3 +48,7 @@ fi
 
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ]   && source /usr/share/fzf/completion.zsh
+
+export PATH=~/.npm-global/bin:$PATH
+export NPM_CONFIG_PREFIX=~/.npm-global
+
