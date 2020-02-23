@@ -25,7 +25,8 @@ local apps = {
         'blueberry-tray', -- Bluetooth tray icon
         'xfce4-power-manager', -- Power manager
         'nm-applet', -- network manager
-        '~/ProgramFiles/clash/clash -d ~/ProgramFiles/clash/'
+        '~/ProgramFiles/clash/clash -d ~/ProgramFiles/clash/',
+        'ibus-daemon',
     },
 
     -- used to define rules
