@@ -26,7 +26,7 @@ local apps = {
         'xfce4-power-manager', -- Power manager
         'nm-applet', -- network manager
         '~/ProgramFiles/clash/clash -d ~/ProgramFiles/clash/',
-        'ibus-daemon',
+        'ibus-daemon -d',
     },
 
     -- used to define rules

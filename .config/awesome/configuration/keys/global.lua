@@ -100,6 +100,11 @@ awful.key({modkey, 'Control'}, 'r', _G.awesome.restart,
 awful.key({modkey, 'Control'}, 'q', _G.awesome.quit,
           {description = 'quit awesome', group = 'awesome'}),
 
+awful.key({modkey, 'Control'}, 'l', function() awful.spawn('slock') end,
+          {description = 'lock', group = 'system'}),
+--awful.key({modkey, 'Control'}, 's', function() awful.spawn('systemctl suspend') end,
+          --{description = 'suspend', group = 'system'}),
+
 awful.key({modkey}, 'f',
           function() awful.layout.set(awful.layout.suit.floating) end,
           {description = "use float layout", group = "layout"}),
