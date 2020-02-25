@@ -16,7 +16,7 @@ local apps = {
         -- lock = 'i3lock-fancy-rapid 5 3 -k --timecolor=ffffffff --datecolor=ffffffff',
         quake = 'kitty --class QuakeTerminal',
         browser = 'google-chrome-stable',
-        file_manager = 'nautilus -w'
+        file_manager = 'nautilus -w',
     },
 
     -- List of apps to start once on start-up
