@@ -13,6 +13,7 @@ call plug#begin(plugdir)
 "tools
 Plug 'vim-scripts/DoxygenToolKit.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/cpp_doxygen'
 Plug 'scrooloose/nerdtree' "file tree
 Plug 'scrooloose/nerdcommenter' "comment tool
