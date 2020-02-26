@@ -545,4 +545,6 @@ endfunction
 
 hi Todo ctermbg=52 ctermfg=12 guibg=NONE guifg=#A57A9E cterm=underline gui=None
 hi SignColumn      ctermbg=233  ctermfg=250    guibg=#111314  guifg=#B3B8C4  cterm=NONE      gui=NONE
-
+highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 ctermbg=233
+highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 ctermbg=233
+highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 ctermbg=233
