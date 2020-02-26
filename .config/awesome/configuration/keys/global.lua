@@ -9,9 +9,9 @@ local apps = require('configuration.apps')
 local lain = require("lain")
 
 -- Key bindings
-local globalKeys = awful.util.table.join( -- Hotkeys
+local globalKeys = awful.util.table.join(
 awful.key({modkey}, 'F1', hotkeys_popup.show_help,
-          {description = 'show help', group = 'awesome'}), -- Tag browsing
+          {description = 'show help', group = 'system'}),
 -- awful.key({modkey}, 'j', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
 -- awful.key({modkey}, 'k', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
 awful.key({modkey}, 'p', awful.tag.history.restore,
@@ -95,14 +95,14 @@ awful.key({modkey}, 'r', function()
     })
 end, {description = 'open defult app', group = 'launcher'}),
 
-awful.key({modkey, 'Control'}, 'r', _G.awesome.restart,
-          {description = 'reload awesome', group = 'awesome'}),
-awful.key({modkey, 'Control'}, 'q', _G.awesome.quit,
-          {description = 'quit awesome', group = 'awesome'}),
+awful.key({modkey, 'Control', 'Shift'}, 'r', _G.awesome.restart,
+          {description = 'reload awesome', group = 'system'}),
+awful.key({modkey, 'Control', 'Shift'}, 'q', _G.awesome.quit,
+          {description = 'quit awesome', group = 'system'}),
 
-awful.key({modkey, 'Control'}, 'l', function() awful.spawn('slock') end,
+awful.key({modkey, 'Control', 'Shift'}, 'l', function() awful.spawn('slock') end,
           {description = 'lock', group = 'system'}),
-awful.key({modkey, 'Control'}, 's', function() awful.spawn('systemctl suspend') end,
+awful.key({modkey, 'Control', 'Shift'}, 's', function() awful.spawn('systemctl suspend') end,
           {description = 'suspend', group = 'system'}),
 
 awful.key({modkey}, 'f',
