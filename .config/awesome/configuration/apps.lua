@@ -22,11 +22,10 @@ local apps = {
     -- List of apps to start once on start-up
     run_on_start_up = {
         'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
-        'blueberry-tray', -- Bluetooth tray icon
-        'xfce4-power-manager', -- Power manager
-        'nm-applet', -- network manager
-        '~/ProgramFiles/clash/clash -d ~/ProgramFiles/clash/',
-        'ibus-daemon -rd',
+        'xfce4-power-manager', -- power manager
+        'blueberry-tray', -- bluetooth applet
+        'nm-applet', -- network manager applet
+        'ibus-daemon -rd', -- input method
     },
 
     -- used to define rules
