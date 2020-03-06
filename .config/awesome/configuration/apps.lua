@@ -21,7 +21,8 @@ local apps = {
 
     -- List of apps to start once on start-up
     run_on_start_up = {
-        'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
+        --'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
+        'xcompmgr', --compositor
         'xfce4-power-manager', -- power manager
         'blueberry-tray', -- bluetooth applet
         'nm-applet', -- network manager applet

@@ -277,4 +277,9 @@ for i = 1, 9 do
     end, descr_toggle_focus))
 end
 
+for _, tagInfo in pairs(myTags) do
+    --globalKeys = awful.util.table.join(globalKeys,
+    --awful.key({modkey}, ), -- Toggle tag display.
+end
+
 return globalKeys

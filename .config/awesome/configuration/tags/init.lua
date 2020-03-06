@@ -3,7 +3,7 @@ local gears = require('gears')
 local icons = require('theme.icons')
 local apps = require('configuration.apps')
 
-local tags = {
+myTags = {
     {
         icon = icons.chrome,
         type = 'chrome',
@@ -51,7 +51,7 @@ awful.layout.layouts = {
 }
 
 awful.screen.connect_for_each_screen(function(s)
-    for i, tag in pairs(tags) do
+    for i, tag in pairs(myTags) do
         awful.tag.add(tostring(i), {
             icon = tag.icon,
             layout = tag.layout or awful.layout.suit.tile,
