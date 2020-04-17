@@ -357,6 +357,8 @@ augroup END
 "other misc settings
 "---------------------------------------------
 
+set title
+
 "encoding
 set encoding=utf-8
 
