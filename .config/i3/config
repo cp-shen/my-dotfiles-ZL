@@ -1,4 +1,4 @@
-# mod key setting
+# variable setting
     set $mod Mod4
     set $im i3-msg
     set $md mode "default"
@@ -12,7 +12,7 @@
     # start web browser
     #bindsym $mod+w exec $my_browser
     # start a terminal
-    bindsym $mod+Shift+Return exec $my_terminal
+    #bindsym $mod+Shift+Return exec $my_terminal
     # toggle dropdown terminal
     bindsym $mod+Return exec $dropdown_terminal
     # start file manager
@@ -24,12 +24,10 @@ bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym w exec $my_browser ; $md
-    bindsym t exec $my_terminal ; $md
+    bindsym Return exec $my_terminal ; $md
     bindsym e exec $file_manager ; $md
 
     bindsym Escape $md
-    bindsym Return $md
-    bindsym $mod+o $md
 }
 
 # xfce4 shortcuts
@@ -54,7 +52,7 @@ mode "$mode_launcher" {
     # change container layout (stacked, tabbed, toggle split)
     #bindsym $mod+s layout stacking
     #bindsym $mod+w layout tabbed
-    bindsym $mod+Shift+s layout toggle split
+    bindsym $mod+Shift+x layout toggle split
 
     # split in horizontal orientation
     #bindsym $mod+Shift+h split h
@@ -79,16 +77,17 @@ mode "$mode_launcher" {
     # launch wallpaper manager
     exec nitrogen --restore
 
-    # launch im manager
     exec ibus-daemon -rd
-
     exec qv2ray
-
     exec nutstore
 
     # launch xfce modules
     exec xfce4-power-manager
     exec xfce4-screensaver
+
+    exec $file_manager
+    exec $my_browser
+    exec $my_terminal
 
 # font setting
     # Font for window titles. Will also be used by the bar unless a different font
@@ -148,11 +147,12 @@ mode "$mode_launcher" {
     #bindsym $mod+d focus child
 
 # dmenu (a program launcher)
-    bindsym $mod+d exec dmenu_run
+    #bindsym $mod+d exec dmenu_run
+
     # There also is the (new) i3-dmenu-desktop which only displays applications
     # shipping a .desktop file. It is a wrapper around dmenu, so you need that
     # installed.
-    # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+    #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # workspace management
     # Define names for default workspaces for which we configure key bindings later on.
@@ -160,7 +160,7 @@ mode "$mode_launcher" {
     set $ws1_www    1: www
     set $ws2_term   2: term
     set $ws3_files  3: files
-    set $ws4        4
+    set $ws4_misc   4: misc
     set $ws5        5
     set $ws6        6
     set $ws7        7
@@ -168,11 +168,23 @@ mode "$mode_launcher" {
     set $ws9        9
     set $ws10       10
 
+    assign [class="chrome"] $ws1_www
+    assign [class="kitty"] $ws2_term
+    assign [class="Nautilus"] $ws3_files
+    assign [class="*"] $ws4_misc
+
+    bindsym $mod+Shift+s move workspace to output right
+
+    bindsym $mod+n workspace next_on_output
+    bindsym $mod+Shift+n workspace prev_on_output
+    bindsym $mod+p workspace back_and_forth
+
     # switch to workspace
-    bindsym $mod+1 workspace number $ws1_www
-    bindsym $mod+2 workspace number $ws2_term
-    bindsym $mod+3 workspace number $ws3_files
-    bindsym $mod+4 workspace number $ws4
+    bindsym $mod+1 workspace number $ws1_www output primary
+    bindsym $mod+2 workspace number $ws2_term output primary
+    bindsym $mod+3 workspace number $ws3_files output primary
+    bindsym $mod+4 workspace number $ws4_misc output primary
+
     bindsym $mod+5 workspace number $ws5
     bindsym $mod+6 workspace number $ws6
     bindsym $mod+7 workspace number $ws7
@@ -180,18 +192,15 @@ mode "$mode_launcher" {
     bindsym $mod+9 workspace number $ws9
     bindsym $mod+0 workspace number $ws10
 
-    bindsym $mod+n workspace next_on_output
-    bindsym $mod+Shift+n workspace prev_on_output
-    bindsym $mod+p workspace back_and_forth
-
     bindsym $mod+w workspace $ws1_www
+    bindsym $mod+Shift+Return workspace $ws2_term
     bindsym $mod+e workspace $ws3_files
 
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number $ws1_www
     bindsym $mod+Shift+2 move container to workspace number $ws2_term
     bindsym $mod+Shift+3 move container to workspace number $ws3_files
-    bindsym $mod+Shift+4 move container to workspace number $ws4
+    bindsym $mod+Shift+4 move container to workspace number $ws4_misc
     bindsym $mod+Shift+5 move container to workspace number $ws5
     bindsym $mod+Shift+6 move container to workspace number $ws6
     bindsym $mod+Shift+7 move container to workspace number $ws7
@@ -214,10 +223,7 @@ mode "resize" {
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return $md
     bindsym Escape $md
-    bindsym $mod+r $md
 }
 
 bindsym $mod+r mode "resize"
