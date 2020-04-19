@@ -58,7 +58,7 @@
     exec xcompmgr
 
     # launch wallpaper manager
-    exec nitrogen --retore
+    exec nitrogen --restore
 
     # launch im manager
     exec ibus-daemon -rd
@@ -70,7 +70,6 @@
     # launch xfce modules
     exec xfce4-power-manager
     exec xfce4-screensaver
-    exec xfce4-clipman
 
 # font setting
     # Font for window titles. Will also be used by the bar unless a different font
