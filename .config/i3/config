@@ -59,36 +59,6 @@ mode "$mode_launcher" {
     # split in vertical orientation
     #bindsym $mod+Shift+v split v
 
-# startup applications
-    # The combination of xss-lock, nm-applet and pactl is a popular choice, so
-    # they are included here as an example. Modify as you see fit.
-
-    # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-    # screen before suspend. Use loginctl lock-session to lock your screen.
-    exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-    # NetworkManager is the most popular way to manage wireless networks on Linux,
-    # and nm-applet is a desktop environment-independent system tray GUI for it.
-    exec --no-startup-id nm-applet
-
-    # start compositor
-    exec xcompmgr
-
-    # launch wallpaper manager
-    exec nitrogen --restore
-
-    exec ibus-daemon -rd
-    exec qv2ray
-    exec nutstore
-
-    # launch xfce modules
-    exec xfce4-power-manager
-    exec xfce4-screensaver
-
-    exec $file_manager
-    exec $my_browser
-    exec $my_terminal
-
 # font setting
     # Font for window titles. Will also be used by the bar unless a different font
     # is used in the bar {} block below.
@@ -171,7 +141,7 @@ mode "$mode_launcher" {
     assign [class="chrome"] $ws1_www
     assign [class="kitty"] $ws2_term
     assign [class="Nautilus"] $ws3_files
-    assign [class="*"] $ws4_misc
+    assign [class=".*"] $ws4_misc
 
     bindsym $mod+Shift+s move workspace to output right
 
@@ -180,10 +150,10 @@ mode "$mode_launcher" {
     bindsym $mod+p workspace back_and_forth
 
     # switch to workspace
-    bindsym $mod+1 workspace number $ws1_www output primary
-    bindsym $mod+2 workspace number $ws2_term output primary
-    bindsym $mod+3 workspace number $ws3_files output primary
-    bindsym $mod+4 workspace number $ws4_misc output primary
+    bindsym $mod+1 workspace number $ws1_www
+    bindsym $mod+2 workspace number $ws2_term
+    bindsym $mod+3 workspace number $ws3_files
+    bindsym $mod+4 workspace number $ws4_misc
 
     bindsym $mod+5 workspace number $ws5
     bindsym $mod+6 workspace number $ws6
@@ -251,3 +221,37 @@ bar {
     for_window [class=".*"] border pixel 0
     gaps inner 10
 
+# startup applications
+    # The combination of xss-lock, nm-applet and pactl is a popular choice, so
+    # they are included here as an example. Modify as you see fit.
+
+    # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+    # screen before suspend. Use loginctl lock-session to lock your screen.
+    exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+    # NetworkManager is the most popular way to manage wireless networks on Linux,
+    # and nm-applet is a desktop environment-independent system tray GUI for it.
+    exec --no-startup-id nm-applet
+
+    # start compositor
+    exec --no-startup-id xcompmgr
+
+    # launch wallpaper manager
+    exec --no-startup-id nitrogen --restore
+
+    exec --no-startup-id ibus-daemon -rd
+    exec --no-startup-id qv2ray
+    exec --no-startup-id nutstore
+
+    # launch xfce modules
+    exec --no-startup-id xfce4-power-manager
+    exec --no-startup-id xfce4-screensaver
+
+    exec --no-startup-id i3-msg workspace $ws1_www
+    exec --no-startup-id i3-msg workspace $ws2_term
+    exec --no-startup-id i3-msg workspace $ws3_files
+    exec --no-startup-id i3-msg workspace $ws4_misc
+
+    exec --no-startup-id $file_manager
+    exec --no-startup-id $my_browser
+    exec --no-startup-id $my_terminal
