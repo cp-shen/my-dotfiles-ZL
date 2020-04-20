@@ -1,5 +1,5 @@
 # variable setting
-    set $mod Mod4
+    set $mod Mod1
     set $im i3-msg
     set $md mode "default"
 
@@ -24,7 +24,7 @@ bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym w exec $my_browser ; $md
-    bindsym Return exec $my_terminal ; $md
+    bindsym t exec $my_terminal ; $md
     bindsym e exec $file_manager ; $md
 
     bindsym Escape $md
@@ -75,7 +75,7 @@ mode "$mode_launcher" {
     bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
     bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# floating window control
+# floating window
     # toggle tiling / floating
     bindsym $mod+Shift+space floating toggle
 
@@ -163,8 +163,9 @@ mode "$mode_launcher" {
     bindsym $mod+0 workspace number $ws10
 
     bindsym $mod+w workspace $ws1_www
-    bindsym $mod+Shift+Return workspace $ws2_term
+    bindsym $mod+t workspace $ws2_term
     bindsym $mod+e workspace $ws3_files
+    bindsym $mod+m workspace $ws4_misc
 
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number $ws1_www
