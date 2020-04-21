@@ -8,13 +8,10 @@
     set $my_browser google-chrome-stable
     set $my_terminal kitty
     set $file_manager nautilus -w
-    set $dropdown_terminal xfce4-terminal --drop-down
     # start web browser
     #bindsym $mod+w exec $my_browser
     # start a terminal
     #bindsym $mod+Shift+Return exec $my_terminal
-    # toggle dropdown terminal
-    bindsym $mod+Return exec $dropdown_terminal
     # start file manager
     #bindsym $mod+e exec $file_manager
 
@@ -249,3 +246,8 @@ bar {
     exec --no-startup-id $file_manager
     exec --no-startup-id $my_browser
     exec --no-startup-id $my_terminal
+
+# dropdown terminal using kitti3
+    exec --no-startup-id kitti3 -p top -s 1.0 0.4
+    bindsym $mod+Return nop kitti3
+
