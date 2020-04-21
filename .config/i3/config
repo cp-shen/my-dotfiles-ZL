@@ -248,6 +248,6 @@ bar {
     exec --no-startup-id $my_terminal
 
 # dropdown terminal using kitti3
-    exec --no-startup-id kitti3 -p top -s 1.0 0.4
+    exec --no-startup-id kitti3 -p top -s 1.0 0.4 -- --title kitti3
     bindsym $mod+Return nop kitti3
 
