@@ -173,8 +173,8 @@ set hlsearch
 set guifont=Fira\ Code:h12
 set foldcolumn=0
 set foldignore=
-nnoremap z= zm
-nnoremap z- zr
+nnoremap z- zm
+nnoremap z= zr
 nnoremap zz za
 
 syntax on
