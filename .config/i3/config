@@ -251,3 +251,5 @@ bar {
     exec --no-startup-id kitti3 -p top -s 1.0 0.4 -- --title kitti3
     bindsym $mod+Return nop kitti3
 
+focus_on_window_activation focus
+
