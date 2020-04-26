@@ -545,3 +545,5 @@ hi GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 ctermbg=233
 hi GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 ctermbg=233
 hi default CocUnderline cterm=underline gui=underline
 
+autocmd BufNewFile,BufRead config set ft=conf
+
