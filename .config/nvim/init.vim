@@ -263,10 +263,10 @@ nnoremap <Leader>bl :BLines<CR>
 nnoremap <Leader>bd :bd<CR>
 
 "window navigation
-"nmap <C-h> <C-w>h
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-l> <C-w>l
+nmap <A-h> <C-w>h
+nmap <A-j> <C-w>j
+nmap <A-k> <C-w>k
+nmap <A-l> <C-w>l
 
 "tab navigation
 nnoremap <Leader>tp :tabprevious<CR>
