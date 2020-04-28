@@ -14,9 +14,14 @@ alias du="du -h"
 alias rm="rm -i"
 alias vim="nvim"
 alias gvim="nvim-qt --no-ext-tabline"
-alias yadm-upload="~/yadm_upload.sh"
 alias nightlight-on="redshift -P -O 2000K"
 alias nightlight-off="redshift -P -O 7000K"
+
+yadm-upload() {
+    yadm add -u
+    yadm commit -m "updated"
+    yadm push
+}
 
 export EDITOR=nvim
 
