@@ -7,7 +7,7 @@
     # default app setting
     set $my_browser google-chrome-stable
     set $my_terminal kitty
-    set $file_manager nautilus -w
+    set $file_manager thunar
     # start web browser
     #bindsym $mod+w exec $my_browser
     # start a terminal
@@ -138,6 +138,7 @@ mode "$mode_launcher" {
     assign [class="chrome"] $ws1_www
     assign [class="kitty"] $ws2_term
     assign [class="Nautilus"] $ws3_files
+    assign [class="thunar"] $ws3_files
     assign [class=".*"] $ws4_misc
 
     bindsym $mod+Shift+s move workspace to output right
@@ -248,7 +249,7 @@ bar {
     exec --no-startup-id $my_terminal
 
 # dropdown terminal using kitti3
-    exec --no-startup-id kitti3 -p top -s 1.0 0.4 -- --title kitti3
+    exec --no-startup-id kitti3 -p top -s 1.0 0.4 -- --title kitti3 --class kitti3
     bindsym $mod+Return nop kitti3
 
 focus_on_window_activation focus
