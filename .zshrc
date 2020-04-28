@@ -18,7 +18,7 @@ alias nightlight-on="redshift -P -O 2000K"
 alias nightlight-off="redshift -P -O 7000K"
 
 yadm-upload() {
-    yadm add -u && yadm commit -m "updated" && yadm push
+    yadm add -u ; yadm commit -m "updated" ; yadm push
 }
 
 export EDITOR=nvim
