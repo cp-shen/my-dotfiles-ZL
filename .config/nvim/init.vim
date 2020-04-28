@@ -15,7 +15,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/cpp_doxygen'
 Plug 'scrooloose/nerdtree' "file tree
-Plug 'scrooloose/nerdcommenter' "comment tool
+Plug 'tyru/caw.vim' "comment tool
+
 Plug 'terryma/vim-multiple-cursors'
     let g:multi_cursor_use_default_mapping = 0
 
@@ -521,6 +522,7 @@ nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
 
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>rg :Rg<CR>
+nnoremap <A-f> :Neoformat<CR>
 nnoremap <leader>nf :Neoformat<CR>
 
 let g:lightline = {
