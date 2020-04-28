@@ -10,7 +10,7 @@ endif
 call plug#begin(plugdir)
 
 "tools
-Plug 'vim-scripts/DoxygenToolKit.vim'
+"Plug 'vim-scripts/DoxygenToolKit.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/cpp_doxygen'
@@ -308,7 +308,7 @@ tnoremap <A-\> <C-\><C-n>
   "\ 'set_tkeymaps': "NvimGdbNoTKeymaps",
   "\ }
 
-nmap <Leader>D <Plug>cpp_doxygenInsert
+nmap <Leader>dg <Plug>cpp_doxygenInsert
 
 nmap <Leader>R :RangerCurrentFile<CR>
 
