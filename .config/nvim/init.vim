@@ -286,10 +286,10 @@ nmap <Leader><Space> :History<CR>
 nmap <Leader>nh :noh<CR>
 
 "save file
-nmap <C-s> :w<CR>
+nmap <Leader><C-s> :w<CR>
 
 "close
-nmap <C-q> :bd<CR>
+nmap <Leader><C-q> :bd<CR>
 
 "terminal mode keybindings
 tnoremap <C-\> <C-\><C-n>
