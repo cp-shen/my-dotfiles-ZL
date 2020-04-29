@@ -281,15 +281,15 @@ nnoremap <Leader>td :tabclose<CR>
 
 "nnoremap <C-k> :bprev<CR>
 
-nmap <Leader><Space> :History<CR>
+nnoremap <Leader><Space> :History<CR>
 
-nmap <Leader>nh :noh<CR>
+nnoremap <Leader>nh :noh<CR>
 
 "save file
-nmap <Leader><C-s> :w<CR>
+nnoremap <A-s> :w<CR>
 
 "close
-nmap <Leader><C-q> :bd<CR>
+nnoremap <A-q> :bd<CR>
 
 "terminal mode keybindings
 tnoremap <C-\> <C-\><C-n>
