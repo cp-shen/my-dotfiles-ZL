@@ -523,6 +523,7 @@ nnoremap <expr><C-k> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-k>"
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <A-f> :Neoformat<CR>
+nnoremap <A-n> :noh<CR>
 nnoremap <leader>nf :Neoformat<CR>
 
 let g:lightline = {
