@@ -44,7 +44,7 @@ Plug 'ntpeters/vim-better-whitespace' "show and remove unwanted whitespaces
 "Plug 'jlanzarotta/bufexplorer'
 
 "tags
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 
 "languages
 "Plug 'calviken/vim-gdscript3'
@@ -258,6 +258,7 @@ nnoremap <Leader>fi :Files<CR>
 nnoremap <Leader>B :Buffers<CR>
 nnoremap <Leader>ta :Tags<CR>
 nnoremap <Leader>bt :BTags<CR>
+nnoremap <A-t> :BTags<CR>
 nnoremap <Leader>li :Lines<CR>
 nnoremap <Leader>bl :BLines<CR>
 
@@ -551,5 +552,10 @@ hi default CocUnderline cterm=underline gui=underline
 autocmd BufNewFile,BufRead config set ft=conf
 autocmd BufNewFile,BufRead *.fs set ft=glsl
 autocmd BufNewFile,BufRead *.vs set ft=glsl
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 nnoremap <A-h> :noh<CR>
