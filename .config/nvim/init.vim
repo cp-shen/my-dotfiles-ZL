@@ -44,7 +44,7 @@ Plug 'ntpeters/vim-better-whitespace' "show and remove unwanted whitespaces
 "Plug 'jlanzarotta/bufexplorer'
 
 "tags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 "languages
 "Plug 'calviken/vim-gdscript3'
