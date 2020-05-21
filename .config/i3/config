@@ -138,7 +138,7 @@ mode "$mode_launcher" {
     assign [class="chrome"] $ws1_www
     assign [class="kitty"] $ws2_term
     assign [class="Nautilus"] $ws3_files
-    assign [class="thunar"] $ws3_files
+    assign [class="[tT]hunar"] $ws3_files
     assign [class=".*"] $ws4_misc
 
     bindsym $mod+Shift+s move workspace to output right
