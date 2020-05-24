@@ -14,6 +14,8 @@
     #bindsym $mod+Shift+Return exec $my_terminal
     # start file manager
     #bindsym $mod+e exec $file_manager
+    bindsym --release $mod+q exec xkill
+
 
 # application launcher mode
 set $mode_launcher Launch
