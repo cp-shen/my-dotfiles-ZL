@@ -21,6 +21,10 @@ yadm-upload() {
     yadm add -u ; yadm commit -m "updated" ; yadm push
 }
 
+show-cpu-freq() {
+    watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""
+}
+
 export EDITOR=nvim
 
 # show system time
