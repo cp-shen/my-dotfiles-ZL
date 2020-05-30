@@ -1,3 +1,5 @@
+script_dir=$HOME/.config/i3blocks-contrib
+
 # Guess the weather
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
@@ -17,14 +19,14 @@ interval=5
 color=#91E78B
 
 [battery]
-command=~/.config/i3blocks/battery/battery
+command=$script_dir/battery/battery
 interval=30
 LABEL=BAT 
 #LABEL=⚡
 BAT_NUMBER=0
 
 [cpu_usage]
-command=~/.config/i3blocks/cpu_usage/cpu_usage
+command=$script_dir/cpu_usage/cpu_usage
 interval=10
 LABEL=CPU 
 color=#ff9999
@@ -34,7 +36,15 @@ color=#ff9999
 #DECIMALS=2
 
 [memory]
-command=~/.config/i3blocks/memory/memory
+command=$script_dir/memory/memory
 label=MEM 
 interval=10
 color=#ff9999
+
+[temperature]
+command=$script_dir/temperature/temperature
+label=TEMP
+interval=10
+T_WARN=70
+T_CRIT=90
+SENSOR_CHIP=k10temp-pci-00c3
