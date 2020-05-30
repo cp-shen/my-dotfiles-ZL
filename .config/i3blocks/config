@@ -1,4 +1,4 @@
-script_dir=$HOME/.config/i3blocks-contrib
+script_dir=/home/scp/.config/i3blocks-contrib
 
 # Guess the weather
 [weather]
@@ -43,8 +43,9 @@ color=#ff9999
 
 [temperature]
 command=$script_dir/temperature/temperature
-label=TEMP
+label=TEMP 
 interval=10
 T_WARN=70
 T_CRIT=90
 SENSOR_CHIP=k10temp-pci-00c3
+color=#bbbbbb
